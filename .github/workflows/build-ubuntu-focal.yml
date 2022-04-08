@@ -1,0 +1,47 @@
+# This is a basic workflow that is manually triggered
+
+name: build for debian10
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - 'docker/**'
+      - '**/*.md'
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:focal
+      options: --privileged --device /dev/fuse
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            cache
+          key: cache-${{ hashFiles('./scripts/build.sh') }}
+          restore-keys: cache-
+      - name: Run build script
+        run: ./scripts/build.sh
+          restore-keys: cache-
+      - name: Run build script
+        run: ./scripts/build.sh
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ./*.AppImage
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Send greeting
+      run: echo "Hello ${{ github.event.inputs.name }}"
