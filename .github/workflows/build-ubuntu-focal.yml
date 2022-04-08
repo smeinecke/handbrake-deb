@@ -1,12 +1,9 @@
 # This is a basic workflow that is manually triggered
 
-name: build for debian10
+name: build custom focal handbrake
 on:
   workflow_dispatch:
-  push:
-    paths-ignore:
-      - 'docker/**'
-      - '**/*.md'
+
 jobs:
   build:
     name: Build
