@@ -37,7 +37,6 @@ esac
 echo "Target architecture: ${PLATFORM}"
 
 # Display tools version
-qmake --version
 cmake --version | head -n 1
 
 # Enable ccache
@@ -65,6 +64,8 @@ if [[ -n "${HB_TAG}" ]]; then
 fi
 COMMIT_HASH=$(git log -n 1 --pretty=format:'%h' --abbrev=8)
 
-mkdir -p build
-cd build
-../configure --enable-fdk-aac --enable-qsv --enable-vce --enable-nvenc --enable-x265 --enable-numa --enable-qsv --disable-gtk
+# create original source tar file - just for dpkg-buildpackage compatibility
+git archive master | bzip2 > ../handbrake_${HB_TAG}.orig.tar.bz2
+cp -vr ${SCRIPTDIR}/assets/debian .
+
+DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -d -us -b
