@@ -16,7 +16,7 @@ case "$(uname -i)" in
     export SYSTEM_ARCH="i686"
     SYSTEM_PLATFORM="x86";;
   *)
-    echo "Unsupported system architecture"
+    echo "Unsupported system architecture: $(uname -i)"
     exit 1;;
 esac
 echo "System architecture: ${SYSTEM_PLATFORM}"
