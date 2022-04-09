@@ -27,7 +27,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Run build script
-        run: "wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ HB_TAG }}/handbrake-${{ github.event.inputs.hb_tag }}_${{ HB_TAG }}_amd64.deb"
+        run: "wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb"
       - name: Github pages APT repo
         uses: jrandiny/apt-repo-action@v2.0.1
         with:
