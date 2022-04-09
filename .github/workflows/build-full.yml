@@ -1,0 +1,87 @@
+name: build full release
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      hb_tag:
+        description: 'Version Tag'
+        default: '21.1.2'
+        required: true
+  create:
+    tags:
+      - '*'
+jobs:
+  build_focal:
+    name: Build focal
+    runs-on: ubuntu-latest
+    container:
+      image: "smeinecke/handbrake-custom-build:focal"
+      options: --privileged --device /dev/fuse
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set env
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Set env
+        if: github.event.inputs.version_tag != ''
+        run: echo "HB_TAG=${{ github.event.inputs.hb_tag }}" >> $GITHUB_ENV
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: |
+            cache
+          key: "focal-build-cache-${{ env.HB_TAG }}"
+          restore-keys: |
+            "focal-build-cache-"
+      - name: Run build script
+        run: ./scripts/build.sh
+        env:
+          DEB_FLAVOR: "focal"
+      - name: Upload deb files
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: ./*.deb
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ./*.deb
+  build_bullseye:
+    name: Build bullseye
+    runs-on: ubuntu-latest
+    container:
+      image: "smeinecke/handbrake-custom-build:bullseye"
+      options: --privileged --device /dev/fuse
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set env
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Set env
+        if: github.event.inputs.version_tag != ''
+        run: echo "HB_TAG=${{ github.event.inputs.hb_tag }}" >> $GITHUB_ENV
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: |
+            cache
+          key: "bullseye-build-cache-${{ env.HB_TAG }}"
+          restore-keys: |
+            "bullseye-build-cache-"
+      - name: Run build script
+        run: ./scripts/build.sh
+        env:
+          DEB_FLAVOR: "bullseye"
+      - name: Upload deb files
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: ./*.deb
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ./*.deb
