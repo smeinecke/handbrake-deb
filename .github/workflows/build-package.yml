@@ -9,8 +9,8 @@ on:
         description: 'Debian/Ubuntu Version'
         default: 'focal'
         required: true
-      HB_TAG:
-        description: 'Handbrake Version'
+      hb_tag:
+        description: 'HandBrake Version Tag'
         default: '1.5.1'
         required: true
 jobs:
@@ -18,13 +18,16 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     container:
-      image: smeinecke/handbrake-custom-build:latest
+      image: smeinecke/handbrake-custom-build-${{ github.event.inputs.flavor }}:latest
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Run build script
         run: ./scripts/build.sh
+        env:
+          DEB_FLAVOR: "${{ github.event.inputs.flavor }}"
+          HB_TAG: "${{ github.event.inputs.hb_tag }}"
       - name: Upload deb files
         uses: actions/upload-artifact@v3
         with:
