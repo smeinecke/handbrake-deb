@@ -29,7 +29,7 @@ case "${ARCH:-$(uname -i)}" in
     TARGET_ARCH="i686"
     PLATFORM="x86";;
   *)
-    echo "Unsupported target architecture"
+    echo "Unsupported target architecture: ${ARCH:-$(uname -i)}"
     exit 1;;
 esac
 echo "Target architecture: ${PLATFORM}"
