@@ -22,6 +22,14 @@ jobs:
         run: ./scripts/build.sh
         env:
           DEB_FLAVOR: "focal"
+      - name: Cache build
+        uses: actions/cache@v2
+        with:
+          path: |
+            cache
+          key: focal-build-cache-${{ HB_TAG }}
+          restore-keys: |
+            focal-build-cache-
       - name: Upload deb files
         uses: actions/upload-artifact@v3
         with:

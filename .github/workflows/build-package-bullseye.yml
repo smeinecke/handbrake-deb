@@ -18,6 +18,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Set env
         run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Cache build
+        uses: actions/cache@v2
+        with:
+          path: |
+            cache
+          key: bullseye-build-cache-${{ HB_TAG }}
+          restore-keys: |
+            bullseye-build-cache-
       - name: Run build script
         run: ./scripts/build.sh
         env:
