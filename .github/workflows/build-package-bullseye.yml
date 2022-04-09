@@ -3,9 +3,9 @@
 name: build handbrake on new tag (bullseye)
 on:
   workflow_dispatch:
-    create:
-      tags:
-        - '*'
+  create:
+    tags:
+      - '*'
 jobs:
   build:
     name: Build
