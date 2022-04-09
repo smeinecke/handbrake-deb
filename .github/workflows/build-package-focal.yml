@@ -4,8 +4,8 @@ name: build handbrake on new tag (focal)
 on:
   workflow_dispatch:
     create:
-    tags:
-      - '*'
+      tags:
+        - '*'
 jobs:
   build:
     name: Build
