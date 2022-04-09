@@ -5,7 +5,7 @@ on:
     inputs:
       hb_tag:
         description: 'Version Tag'
-        default: '21.1.2'
+        default: '1.5.1'
         required: true
   create:
     tags:
