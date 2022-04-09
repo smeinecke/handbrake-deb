@@ -6,8 +6,11 @@ on:
     # Inputs the workflow accepts.
     inputs:
       flavor:
+        type: choice
         description: 'Debian/Ubuntu Version'
-        default: 'focal'
+        options:
+          - 'focal'
+          - 'bullseye'
         required: true
       hb_tag:
         description: 'HandBrake Version Tag'
