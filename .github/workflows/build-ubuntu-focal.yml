@@ -7,22 +7,12 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: smeinecke/handbrake-custom-build:latest
     container:
       image: ubuntu:focal
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            cache
-          key: cache-${{ hashFiles('./scripts/build.sh') }}
-          restore-keys: cache-${{ hashFiles('./scripts/build.sh') }}
-      - name: Run build script
-        run: ./scripts/build.sh
-          restore-keys: cache-${{ hashFiles('./scripts/build.sh') }}
       - name: Run build script
         run: ./scripts/build.sh
