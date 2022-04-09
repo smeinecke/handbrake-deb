@@ -6,8 +6,6 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTDIR=$(dirname "${SCRIPT}")
 WORKDIR="${PWD}"
 
-HB_TAG="1.5.1"
-
 git config --global advice.detachedHead false
 
 case "$(uname -i)" in
@@ -68,4 +66,4 @@ COMMIT_HASH=$(git log -n 1 --pretty=format:'%h' --abbrev=8)
 git archive master | bzip2 > ../handbrake_${HB_TAG}.orig.tar.bz2
 cp -vr ${SCRIPTDIR}/assets/debian .
 
-DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -d -us -b
+DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b

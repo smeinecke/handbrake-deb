@@ -1,18 +1,32 @@
 # This is a basic workflow that is manually triggered
 
-name: build custom focal handbrake
+name: build custom handbrake
 on:
   workflow_dispatch:
-
+    # Inputs the workflow accepts.
+    inputs:
+      flavor:
+        description: 'Debian/Ubuntu Version'
+        default: 'focal'
+        required: true
+      HB_TAG:
+        description: 'Handbrake Version'
+        default: '1.5.1'
+        required: true
 jobs:
   build:
     name: Build
-    runs-on: smeinecke/handbrake-custom-build:latest
+    runs-on: ubuntu-latest
     container:
-      image: ubuntu:focal
+      image: smeinecke/handbrake-custom-build:latest
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run build script
         run: ./scripts/build.sh
+      - name: Upload deb files
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: ./*.deb
