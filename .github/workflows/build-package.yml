@@ -16,6 +16,9 @@ on:
         description: 'HandBrake Version Tag'
         default: '1.5.1'
         required: true
+      release:
+        type: boolean
+        description: "publish to repository"
 jobs:
   build:
     name: Build
@@ -49,3 +52,15 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./*.deb
+      - name: Github pages APT repo
+        uses: jrandiny/apt-repo-action@v2.0.1
+        if: github.event.inputs.release
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            ${{ github.event.inputs.flavor }}
+          file: ./*.deb
+          file_target_version: ${{ github.event.inputs.flavor }}
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""

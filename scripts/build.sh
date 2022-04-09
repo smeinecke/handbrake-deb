@@ -48,7 +48,7 @@ git archive master | bzip2 > ../handbrake_${HB_TAG}.orig.tar.bz2
 cp -vr ${SCRIPTDIR}/debian-${DEB_FLAVOR} debian
 DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b
 cd ..
-rm -vf *-dbgsym.deb
+rm -vf *dbgsym*.deb
 mv -v handbrake-cli_${HB_TAG}_amd64.deb handbrake-${DEB_FLAVOR}-cli_${HB_TAG}_amd64.deb
 mv -v handbrake_${HB_TAG}_amd64.deb handbrake-${DEB_FLAVOR}_${HB_TAG}_amd64.deb
 ls *.deb
