@@ -20,6 +20,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: "{{defaultContext}}:docker"
-          file: docker/build-focal
+          file: build-focal
           push: true
           tags: smeinecke/handbrake-custom-build:latest
