@@ -8,7 +8,7 @@ Uploaders:
 Homepage: https://handbrake.fr/
 Vcs-Git: https://github.com/HandBrake/HandBrake.git
 Vcs-Browser: https://github.com/HandBrake/HandBrake
-Standards-Version: 4.5.0
+Standards-Version: 4.4.1
 Build-Depends:
  automake,
  cmake,
