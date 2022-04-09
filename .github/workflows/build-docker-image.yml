@@ -31,4 +31,4 @@ jobs:
           context: "{{defaultContext}}:docker"
           file: "build-${{ github.event.inputs.flavor }}"
           push: true
-          tags: "smeinecke/handbrake-custom-build:${{ github.event.inputs.flavor }}"
+          tags: "${{ secrets.DOCKERHUB_USERNAME }}/handbrake-custom-build:${{ github.event.inputs.flavor }}"

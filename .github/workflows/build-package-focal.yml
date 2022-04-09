@@ -11,7 +11,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     container:
-      image: smeinecke/handbrake-custom-build:focal
+      image: "${{ secrets.DOCKERHUB_USERNAME }}/handbrake-custom-build:focal"
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout code
