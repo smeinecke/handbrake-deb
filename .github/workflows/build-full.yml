@@ -61,7 +61,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: Set env
-        if: github.event.inputs.version_tag != ''
+        if: github.event.inputs.hb_tag != ''
         run: echo "HB_TAG=${{ github.event.inputs.hb_tag }}" >> $GITHUB_ENV
       - name: Cache build
         uses: actions/cache@v3
