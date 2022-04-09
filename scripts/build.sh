@@ -64,6 +64,6 @@ COMMIT_HASH=$(git log -n 1 --pretty=format:'%h' --abbrev=8)
 
 # create original source tar file - just for dpkg-buildpackage compatibility
 git archive master | bzip2 > ../handbrake_${HB_TAG}.orig.tar.bz2
-cp -vr ${SCRIPTDIR}/assets/debian .
+cp -vr ${SCRIPTDIR}/ubuntu-focal debian
 
 DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b
