@@ -48,6 +48,20 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./*.deb
+      - name: Github pages APT repo
+        uses: smeinecke/apt-repo-action@v2.0.2
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            ${{ github.event.inputs.flavor }}
+          file: |
+            handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
+            handbrake-cli-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
+          file_target_version: ${{ github.event.inputs.flavor }}
+          public_key: ${{ secrets.APT_PUBLIC_KEY }}
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
   build_bullseye:
     name: Build bullseye
     runs-on: ubuntu-latest
@@ -85,3 +99,17 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./*.deb
+      - name: Github pages APT repo
+        uses: smeinecke/apt-repo-action@v2.0.2
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            ${{ github.event.inputs.flavor }}
+          file: |
+            handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
+            handbrake-cli-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
+          file_target_version: ${{ github.event.inputs.flavor }}
+          public_key: ${{ secrets.APT_PUBLIC_KEY }}
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
