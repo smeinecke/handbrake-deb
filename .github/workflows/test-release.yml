@@ -29,7 +29,7 @@ jobs:
       - name: Run build script
         run: "apt-get update && apt-get install -y wget && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}-cli_${{ github.event.inputs.hb_tag }}_amd64.deb"
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@4cff160a27fb9fca6f759d20a04c7a2013b21368
+        uses: smeinecke/apt-repo-action@d3e6e6c5e3ea7c555a5ef2d8b8d2b10c467bcbff
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
