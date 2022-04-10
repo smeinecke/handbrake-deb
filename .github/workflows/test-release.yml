@@ -35,7 +35,7 @@ jobs:
           repo_supported_arch: amd64
           repo_supported_version: |
             ${{ github.event.inputs.flavor }}
-          file:
+          file: |
             "handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb"
             "handbrake-${{ github.event.inputs.flavor }}-cli_${{ github.event.inputs.hb_tag }}_amd64.deb"
           file_target_version: ${{ github.event.inputs.flavor }}
