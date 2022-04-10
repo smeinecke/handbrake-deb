@@ -37,6 +37,6 @@ jobs:
             ${{ github.event.inputs.flavor }}
           file: "handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb"
           file_target_version: ${{ github.event.inputs.flavor }}
-          public_key: ${{ secret.APT_PUBLIC_KEY }}
+          public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
