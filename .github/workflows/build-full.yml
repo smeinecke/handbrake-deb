@@ -54,11 +54,11 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
-            ${{ github.event.inputs.flavor }}
+            focal
           file: |
-            handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
-            handbrake-cli-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
-          file_target_version: ${{ github.event.inputs.flavor }}
+            handbrake-${{ github.event.inputs.flavor }}_${{ env.HB_TAG }}_amd64.deb
+            handbrake-cli-${{ github.event.inputs.flavor }}_${{ env.HB_TAG }}_amd64.deb
+          file_target_version: focal
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -105,11 +105,11 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
-            ${{ github.event.inputs.flavor }}
+            bullseye
           file: |
-            handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
-            handbrake-cli-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
-          file_target_version: ${{ github.event.inputs.flavor }}
+            handbrake-bullseye_${{ env.HB_TAG }}_amd64.deb
+            handbrake-cli-bullseye_${{ env.HB_TAG }}_amd64.deb
+          file_target_version: bullseye
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
