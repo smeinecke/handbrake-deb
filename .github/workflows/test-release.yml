@@ -27,16 +27,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Run build script
-        run: "apt-get update && apt-get install -y wget && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb"
+        run: "apt-get update && apt-get install -y wget && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}-cli_${{ github.event.inputs.hb_tag }}_amd64.deb"
       - name: Github pages APT repo
-        uses: jrandiny/apt-repo-action@v2.0.1
+        uses: smeinecke/apt-repo-action@v2.0.2
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
             ${{ github.event.inputs.flavor }}
-          file: "handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb"
+          file:
+            "handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb"
+            "handbrake-${{ github.event.inputs.flavor }}-cli_${{ github.event.inputs.hb_tag }}_amd64.deb"
           file_target_version: ${{ github.event.inputs.flavor }}
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
+        env:
+          INPUT_DEBUG: 1
