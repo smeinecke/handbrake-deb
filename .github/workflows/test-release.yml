@@ -27,9 +27,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Run build script
-        run: "apt-get update && apt-get install -y wget && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}-cli_${{ github.event.inputs.hb_tag }}_amd64.deb"
+        run: "wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-${{ github.event.inputs.flavor }}-cli_${{ github.event.inputs.hb_tag }}_amd64.deb"
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@8d3a4f537d1ce7868bfb2cd08f22681efeeafd3e
+        uses: smeinecke/apt-repo-action@b7e4d4b3535f2c50e42e302384da0177ecc81965
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64

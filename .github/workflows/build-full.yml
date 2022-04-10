@@ -49,7 +49,7 @@ jobs:
         with:
           files: ./*.deb
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.0.2
+        uses: smeinecke/apt-repo-action@b7e4d4b3535f2c50e42e302384da0177ecc81965
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -100,7 +100,7 @@ jobs:
         with:
           files: ./*.deb
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.0.2
+        uses: smeinecke/apt-repo-action@b7e4d4b3535f2c50e42e302384da0177ecc81965
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
