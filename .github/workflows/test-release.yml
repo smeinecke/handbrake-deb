@@ -29,11 +29,12 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            bullseye
             focal
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
-          file_target_version: ${{ github.event.inputs.flavor }}
+          file_target_version: focal
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -45,10 +46,11 @@ jobs:
           repo_supported_arch: amd64
           repo_supported_version: |
             bullseye
+            focal
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
-          file_target_version: ${{ github.event.inputs.flavor }}
+          file_target_version: bullseye
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
