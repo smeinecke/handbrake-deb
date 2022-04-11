@@ -14,7 +14,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     container:
-      image: "smeinecke/handbrake-custom-build:${{ github.event.inputs.flavor }}"
+      image: "smeinecke/handbrake-custom-build:focal"
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout code
