@@ -56,8 +56,8 @@ jobs:
           repo_supported_version: |
             focal
           file: |
-            handbrake-${{ github.event.inputs.flavor }}_${{ env.HB_TAG }}_amd64.deb
-            handbrake-cli-${{ github.event.inputs.flavor }}_${{ env.HB_TAG }}_amd64.deb
+            handbrake_${{ env.HB_TAG }}~focal_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
           file_target_version: focal
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
@@ -107,8 +107,8 @@ jobs:
           repo_supported_version: |
             bullseye
           file: |
-            handbrake-bullseye_${{ env.HB_TAG }}_amd64.deb
-            handbrake-cli-bullseye_${{ env.HB_TAG }}_amd64.deb
+            handbrake_${{ env.HB_TAG }}~bullseye_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~bullseye_amd64.deb
           file_target_version: bullseye
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}

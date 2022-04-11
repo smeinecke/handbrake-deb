@@ -53,7 +53,7 @@ jobs:
         with:
           files: ./*.deb
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.0.2
+        uses: smeinecke/apt-repo-action@b7e4d4b3535f2c50e42e302384da0177ecc81965
         if: github.event.inputs.release
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -61,8 +61,8 @@ jobs:
           repo_supported_version: |
             ${{ github.event.inputs.flavor }}
           file: |
-            handbrake-${{ github.event.inputs.flavor }}_${{ github.event.inputs.hb_tag }}_amd64.deb
-            handbrake-${{ github.event.inputs.flavor }}-cli_${{ github.event.inputs.hb_tag }}_amd64.deb
+            handbrake_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
           file_target_version: ${{ github.event.inputs.flavor }}
           public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}

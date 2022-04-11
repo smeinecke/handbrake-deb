@@ -1,13 +1,14 @@
 #!/bin/bash
 set -e
-set -x
 
 if [[ -z "${HB_TAG}" ]]; then
     echo "Parameter HB_TAG missing!"
+    exit 1;
 fi
 
 if [[ -z "${DEB_FLAVOR}" ]]; then
     echo "Parameter DEB_FLAVOR missing!"
+    exit 1;
 fi
 
 SCRIPT=$(readlink -f "$0")
@@ -46,9 +47,16 @@ COMMIT_HASH=$(git log -n 1 --pretty=format:'%h' --abbrev=8)
 # create original source tar file - just for dpkg-buildpackage compatibility
 git archive master | bzip2 > ../handbrake_${HB_TAG}.orig.tar.bz2
 cp -vr ${SCRIPTDIR}/debian-${DEB_FLAVOR} debian
+(
+  echo "handbrake (${HB_TAG}~${DEB_FLAVOR}) unstable; urgency=high"
+  echo ""
+  echo "  * upstream release"
+  echo ""
+  echo " -- HandBrake Build <handbrake-deb@github.com>  $(date '+%a, %d %b %Y %H:%M:%S %z')"
+  echo ""
+) > debian/changelog
+
+bash
 DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b
 cd ..
 rm -vf *dbgsym*.deb
-mv -v handbrake-cli_${HB_TAG}_amd64.deb handbrake-${DEB_FLAVOR}-cli_${HB_TAG}_amd64.deb
-mv -v handbrake_${HB_TAG}_amd64.deb handbrake-${DEB_FLAVOR}_${HB_TAG}_amd64.deb
-ls *.deb
