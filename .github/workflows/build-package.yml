@@ -53,13 +53,14 @@ jobs:
         with:
           files: ./*.deb
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@b7e4d4b3535f2c50e42e302384da0177ecc81965
+        uses: smeinecke/apt-repo-action@v2.1.0
         if: github.event.inputs.release
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
-            ${{ github.event.inputs.flavor }}
+            bullseye
+            focal
           file: |
             handbrake_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
