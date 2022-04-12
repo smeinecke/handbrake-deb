@@ -24,7 +24,7 @@ jobs:
       - name: Download release bullseye
         run: "wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.0
+        uses: smeinecke/apt-repo-action@39754cc158f246e375b358f450b2cc4b919c0d4a
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -35,12 +35,11 @@ jobs:
             "handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
           file_target_version: focal
-          public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.0
+        uses: smeinecke/apt-repo-action@39754cc158f246e375b358f450b2cc4b919c0d4a
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -51,7 +50,6 @@ jobs:
             "handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
           file_target_version: bullseye
-          public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
