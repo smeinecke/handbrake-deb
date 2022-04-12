@@ -24,7 +24,7 @@ jobs:
       - name: Download release bullseye
         run: "wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@39754cc158f246e375b358f450b2cc4b919c0d4a
+        uses: smeinecke/apt-repo-action@9586d8d22921806600ea5d4a626034d0f27097b0
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -39,7 +39,7 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@39754cc158f246e375b358f450b2cc4b919c0d4a
+        uses: smeinecke/apt-repo-action@9586d8d22921806600ea5d4a626034d0f27097b0
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
