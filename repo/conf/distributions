@@ -1,0 +1,14 @@
+Description: smeinecke/handbrake-deb
+Codename: bullseye
+Architectures: amd64
+Components: main
+SignWith: 49BECCC2F3C2A369CF5A5B91DBB612A0781969AD
+
+
+Description: smeinecke/handbrake-deb
+Codename: focal
+Architectures: amd64
+Components: main
+SignWith: 49BECCC2F3C2A369CF5A5B91DBB612A0781969AD
+
+

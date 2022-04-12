@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Codename: focal
+Date: Tue, 12 Apr 2022 11:49:24 UTC
+Architectures: amd64
+Components: main
+Description: smeinecke/handbrake-deb
+MD5Sum:
+ 8ab45be9176f9a72598f74271f75fcde 2974 main/binary-amd64/Packages
+ 9024795f94b1958788d675b15961e458 1098 main/binary-amd64/Packages.gz
+ bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
+SHA1:
+ cdd8e72f107d40130ffb7eaa7a8206a3bd0b67c1 2974 main/binary-amd64/Packages
+ 853dd72fa8d88cc3469b8814bd36779c94741d50 1098 main/binary-amd64/Packages.gz
+ 1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
+SHA256:
+ 06e9dc4afd5b4c6666784dc8e071bc853f33653970c3794ae2f0426abbe8ff8e 2974 main/binary-amd64/Packages
+ c95bd6909ea9f6ea2d6d1e8fc4b6634367e69d180aab3d6bf6ec64e186037914 1098 main/binary-amd64/Packages.gz
+ 81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmJVZ0UACgkQ27YSoHgZ
+aa0HCQ//Qze09U6nWcd9JAyGUEztCX5Tmv0djcT/GzJJ1gw9w6HBO87uI6Kh7G0g
+IKhLlca67/S51rOdtR0hFOvvBKvHpWRbAuqH27DJGXYkxMvR2J6D4CVRCjkIT9DW
+a+vmFXLorhFmNGAm6FPf4pBn3nAp9DlxAaSxDIUiTeF3j0fEFG2t0dwXyOUbhkyg
+EmzjuHo5bPjJQQ0ogtXd3ko6skqflE8MZQfdJhB8qY9roLDlmJFjzODciyQ62lGB
+5JF+YmOi4qK1VAvh9Q8u+xEi+teEPA8iGf/jpnzPMTF1fXvjnCB+6WX0eLG56mZU
+DtNcxDnGyalIf2xzAhp+YYseyNIf8mUhGYOwT+8Q85MrRs3TYFftcxcjcRMMbw34
+w7zg5dtJgEEgeDaD3RC767jEULhUuFwNS8KElissuMhYP/RFRecdCCO9svJ7spqn
+YSZBJOGQTe4zY+NdTf6KG0mlei8MBJH3NgGXZ6+X559LG/JVf7f5zT0J6PZHLpKM
+EuI80faiq7y3jMEo1XX/Ca2Rcg5W+rcWXvNuRyoKgWo4O97sWvExtMjK/IEwmmXS
+lp/hWdtgPKynoPlllLHqWFWAufUkULpA/7pbckGTsdPM62wmgc7aW9MGfzW6Az0T
+r+6tDx6ttzxvAUO6yAu0LjWs3WcS957TquDUbX1gxPp/PMavoXc=
+=x81w
+-----END PGP SIGNATURE-----
