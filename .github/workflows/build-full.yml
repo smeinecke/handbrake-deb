@@ -49,7 +49,7 @@ jobs:
         with:
           files: ./*.deb
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.0
+        uses: smeinecke/apt-repo-action@v2.1.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -60,7 +60,6 @@ jobs:
             handbrake_${{ env.HB_TAG }}~focal_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
           file_target_version: focal
-          public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
   build_bullseye:
@@ -101,7 +100,7 @@ jobs:
         with:
           files: ./*.deb
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.0
+        uses: smeinecke/apt-repo-action@v2.1.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -112,6 +111,5 @@ jobs:
             handbrake_${{ env.HB_TAG }}~bullseye_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~bullseye_amd64.deb
           file_target_version: bullseye
-          public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
