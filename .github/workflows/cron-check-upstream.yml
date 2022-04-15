@@ -1,0 +1,25 @@
+name: cron-check-upstream
+on:
+  schedule:
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+jobs:
+  check_upstream:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GH_PAT }}
+    - id: check
+      run: "./scripts/check_latest_version.sh 'HandBrake/HandBrake' 'smeinecke/handbrake-deb'"
+      shell: bash
+    - name: Commit report
+      if: "steps.check.outputs.vercomp == 'newer'"
+      run: |
+        git config --global user.name 'Github Builder'
+        git config --global user.email 'handbrake@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/$GITHUB_REPOSITORY
+        git tag -m 'New upstream release ${{ steps.check.outputs.remote_current_release }}' "${{ steps.check.outputs.remote_current_release }}"
+        git push origin "${{ steps.check.outputs.remote_current_release }}"
+
