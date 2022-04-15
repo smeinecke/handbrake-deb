@@ -11,11 +11,15 @@ on:
     tags:
       - '*'
 jobs:
-  build_focal:
-    name: Build focal
+  build:
+    name: Build packages
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os-version: ["bullseye", "focal"]
     container:
-      image: "smeinecke/handbrake-custom-build:focal"
+      image: "smeinecke/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout code
@@ -31,45 +35,13 @@ jobs:
         with:
           path: |
             cache
-          key: "focal-build-cache-${{ env.HB_TAG }}"
+          key: "${{ matrix.os-version }}-build-cache-${{ env.HB_TAG }}"
           restore-keys: |
-            "focal-build-cache-"
+            "${{ matrix.os-version }}-build-cache-"
       - name: Run build script
         run: ./scripts/build.sh
         env:
-          DEB_FLAVOR: "focal"
-      - name: Upload deb files
-        uses: actions/upload-artifact@v3
-        with:
-          name: packages
-          path: ./*.deb
-  build_bullseye:
-    name: Build bullseye
-    runs-on: ubuntu-latest
-    container:
-      image: "smeinecke/handbrake-custom-build:bullseye"
-      options: --privileged --device /dev/fuse
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Set env
-        if: startsWith(github.ref, 'refs/tags/')
-        run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Set env
-        if: github.event.inputs.hb_tag != ''
-        run: echo "HB_TAG=${{ github.event.inputs.hb_tag }}" >> $GITHUB_ENV
-      - name: Cache build
-        uses: actions/cache@v3
-        with:
-          path: |
-            cache
-          key: "bullseye-build-cache-${{ env.HB_TAG }}"
-          restore-keys: |
-            "bullseye-build-cache-"
-      - name: Run build script
-        run: ./scripts/build.sh
-        env:
-          DEB_FLAVOR: "bullseye"
+          DEB_FLAVOR: "${{ matrix.os-version }}"
       - name: Upload deb files
         uses: actions/upload-artifact@v3
         with:
@@ -77,7 +49,7 @@ jobs:
           path: ./*.deb
   add_release:
     name: Add package to release
-    needs: [build_focal, build_bullseye]
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
