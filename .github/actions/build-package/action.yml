@@ -10,7 +10,7 @@ inputs:
     required: true
 runs:
   using: "docker"
-  image: docker://smeinecke/handbrake-custom-build:focal
+  image: "docker://smeinecke/handbrake-custom-build:${{ inputs.flavor }}"
   steps:
     - name: Checkout code
       uses: actions/checkout@v3
