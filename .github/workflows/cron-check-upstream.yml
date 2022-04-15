@@ -12,7 +12,7 @@ jobs:
       with:
         token: ${{ secrets.GH_PAT }}
     - id: check
-      run: "./scripts/check_latest_version.sh 'HandBrake/HandBrake' 'smeinecke/handbrake-deb'"
+      run: ./scripts/check_latest_version.sh 'HandBrake/HandBrake' "$GITHUB_REPOSITORY"
       shell: bash
     - name: Commit report
       if: "steps.check.outputs.vercomp == 'newer'"

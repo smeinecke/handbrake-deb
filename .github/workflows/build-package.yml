@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: build custom
+name: build package
 on:
   workflow_dispatch:
     # Inputs the workflow accepts.

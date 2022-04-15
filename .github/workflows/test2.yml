@@ -1,0 +1,16 @@
+---
+
+name: test action
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: test-foo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: build
+        uses: ./.github/actions/build-package
+        with:
+          flavor: focal
