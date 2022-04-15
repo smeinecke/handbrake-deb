@@ -43,25 +43,6 @@ jobs:
         with:
           name: packages
           path: ./*.deb
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: ./*.deb
-      - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.1
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-          repo_supported_arch: amd64
-          repo_supported_version: |
-            bullseye
-            focal
-          file: |
-            handbrake_${{ env.HB_TAG }}~focal_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
-          file_target_version: focal
-          private_key: ${{ secrets.APT_SIGNING_KEY }}
-          key_passphrase: ""
   build_bullseye:
     name: Build bullseye
     runs-on: ubuntu-latest
@@ -94,12 +75,20 @@ jobs:
         with:
           name: packages
           path: ./*.deb
+  add_release:
+    needs: [build_focal, build_bullseye]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: packages
+          path: ./*.deb
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./*.deb
-      - name: Github pages APT repo
+      - name: Add bullseye release
         uses: smeinecke/apt-repo-action@v2.1.1
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -111,5 +100,19 @@ jobs:
             handbrake_${{ env.HB_TAG }}~bullseye_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~bullseye_amd64.deb
           file_target_version: bullseye
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+      - name: Add focal release
+        uses: smeinecke/apt-repo-action@v2.1.1
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            bullseye
+            focal
+          file: |
+            handbrake_${{ env.HB_TAG }}~focal_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
+          file_target_version: focal
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
