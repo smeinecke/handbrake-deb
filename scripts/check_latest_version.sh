@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 vercomp () {
     if [[ $1 == $2 ]]
@@ -37,10 +38,22 @@ if [ -z $1 ]; then
 fi
 
 remote_current_release=$(curl -sL https://api.github.com/repos/$1/releases/latest | jq -r ".tag_name")
+remote_current_release="${remote_current_release/Release\//}"
 echo "::set-output name=remote_current_release::${remote_current_release}"
-local_current_tag=$(curl -sL https://api.github.com/repos/$2/releases/latest | jq -r ".tag_name")
-echo "::set-output name=own_current_release::${local_current_tag}"
-vercomp ${remote_current_release} ${local_current_tag}
+if [ -z $remote_current_release ]; then
+    echo "own_current_release empty!"
+fi
+
+local_repo="$2"
+if [ -z $local_repo ]; then
+    local_repo="${GITHUB_REPOSITORY}"
+fi
+own_current_release=$(curl -sL https://api.github.com/repos/${local_repo}/releases/latest | jq -r ".tag_name")
+echo "::set-output name=own_current_release::${own_current_release}"
+if [ -z $own_current_release ]; then
+    echo "own_current_release empty!"
+fi
+vercomp ${remote_current_release} ${own_current_release}
 case $? in
     0) op='equal';;
     1) op='newer';;
