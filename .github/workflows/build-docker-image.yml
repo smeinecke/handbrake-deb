@@ -9,6 +9,7 @@ on:
         description: 'Debian/Ubuntu Version'
         options:
           - 'focal'
+          - 'jammy'
           - 'bullseye'
         required: true
 

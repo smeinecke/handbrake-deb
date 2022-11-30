@@ -46,7 +46,7 @@ COMMIT_HASH=$(git log -n 1 --pretty=format:'%h' --abbrev=8)
 
 # create original source tar file - just for dpkg-buildpackage compatibility
 git archive master | bzip2 > ../handbrake_${HB_TAG}.orig.tar.bz2
-cp -vr ${SCRIPTDIR}/debian-${DEB_FLAVOR} debian
+cp -vr ${SCRIPTDIR}/${DEB_FLAVOR} debian
 (
   echo "handbrake (${HB_TAG}~${DEB_FLAVOR}) unstable; urgency=high"
   echo ""
@@ -57,6 +57,6 @@ cp -vr ${SCRIPTDIR}/debian-${DEB_FLAVOR} debian
 ) > debian/changelog
 
 bash
-DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b
+DEB_BUILD_OPTIONS="noautodbgsym nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b
 cd ..
 rm -vf *dbgsym*.deb
