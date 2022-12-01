@@ -1,22 +1,28 @@
 #!/usr/bin/make -f
 
-LDFLAGS += -Wl,-z,defs
-LDFLAGS += -Wl,--as-needed
+include /usr/share/dpkg/architecture.mk
+
+export DEB_LDFLAGS_MAINT_APPEND=-Wl,-z,defs
 
 %:
-	dh $@ --builddirectory=build
+	dh $@ --builddirectory=$(DEB_BUILD_GNU_TYPE)
 
 override_dh_auto_configure:
-	bash ./configure --prefix=/usr --build build --debug=std \
+	bash ./configure \
+		--prefix=/usr \
+		--host=$(DEB_HOST_GNU_TYPE) \
+		--build=$(DEB_BUILD_GNU_TYPE) \
+		--debug=std \
 		--enable-qsv \
 		--enable-vce \
 		--enable-fdk-aac \
 		--enable-nvenc \
 		--enable-numa \
 		--enable-x265 \
-        --enable-libsvtav1 \
-        --enable-encoder=libsvtav1 \
+		--disable-df-fetch \
+		--disable-df-verify \
 		--disable-gtk-update-checks \
+		$(confflags) \
 		CC="$(CC)" CXX="$(CXX)" \
 		CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)" CPPFLAGS="$(CPPFLAGS)"
 

@@ -8,11 +8,11 @@ Uploaders:
 Homepage: https://handbrake.fr/
 Vcs-Git: https://github.com/HandBrake/HandBrake.git
 Vcs-Browser: https://github.com/HandBrake/HandBrake
-Standards-Version: 4.5.0
+Standards-Version: 4.6.0
 Build-Depends:
  automake,
  cmake,
- debhelper-compat (= 12),
+ debhelper-compat (= 13),
  intltool,
  libass-dev,
  libbz2-dev,
@@ -30,13 +30,16 @@ Build-Depends:
  libopus-dev,
  libspeex-dev,
  libtheora-dev,
+ libturbojpeg0-dev,
+ libva-dev [amd64],
  libvorbis-dev,
  libvpx-dev,
  libx264-dev,
+ libx265-dev,
  libxml2-dev,
- nasm (>= 2.13),
+ nasm,
  python3,
- yasm (>= 1.2)
+ yasm
 Rules-Requires-Root: no
 
 Package: handbrake
