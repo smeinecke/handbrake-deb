@@ -12,6 +12,7 @@ override_dh_auto_configure:
 		--enable-vce \
 		--enable-fdk-aac \
 		--enable-nvenc \
+		--enable-nvdec \
 		--enable-numa \
 		--enable-x265 \
 		--disable-gtk-update-checks \
