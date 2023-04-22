@@ -51,6 +51,7 @@ cmake --version | head -n 1
 chmod  +x configure
 
 if [ "${DEB_FLAVOR}" == "jammy" ]; then
+  pwd
   echo "Workaround as build via normal dpkg-buildpackage does not work on jammy"
   echo "So, build manually and simply using equivs to get deb packages"
   ./configure \
@@ -66,6 +67,9 @@ if [ "${DEB_FLAVOR}" == "jammy" ]; then
     --launch-jobs=0 --launch
   equivs-build ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   rm -vf *dbgsym*.deb
+  mv *.deb ../
+  mv *.changes ../
+  mv *.buildinfo ../
   exit 0;
 fi
 
