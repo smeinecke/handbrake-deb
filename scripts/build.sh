@@ -65,6 +65,7 @@ if [ "${DEB_FLAVOR}" == "jammy" ]; then
     --disable-gtk-update-checks \
     --enable-qsv --enable-nvenc --enable-nvdec --enable-numa \
     --launch-jobs=0 --launch
+  sed -i "s,_VERSION_,${HB_TAG},g" ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   equivs-build ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   rm -vf *dbgsym*.deb
   mv *.deb ../
