@@ -68,9 +68,9 @@ if [ "${DEB_FLAVOR}" == "jammy" ]; then
   sed -i "s,_VERSION_,${HB_TAG},g" ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   equivs-build ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   rm -vf *dbgsym*.deb
-  mv *.deb ../
-  mv *.changes ../
-  mv *.buildinfo ../
+  mv -v *.deb ../
+  mv -v *.changes ../
+  mv -v *.buildinfo ../
   exit 0;
 fi
 

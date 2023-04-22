@@ -63,7 +63,7 @@ jobs:
             bullseye
             focal
             jammy
-          files: |
+          file: |
             handbrake_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
           file_target_version: ${{ github.event.inputs.flavor }}
