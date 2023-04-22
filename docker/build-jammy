@@ -2,10 +2,14 @@ FROM ubuntu:jammy
 
 ADD assets/dpkg_nodoc /etc/dpkg/dpkg.cfg.d/90_nodoc
 ADD assets/dpkg_nolocale /etc/dpkg/dpkg.cfg.d/90_nolocale
-ADD assets/apt_nocache /etc/apt/apt.conf.d/90_nocache
-ADD assets/apt_mindeps /etc/apt/apt.conf.d/90_mindeps
 
 ARG DEBIAN_FRONTEND=noninteractive
+
+RUN set -e \
+    && apt-get update \
+    && apt-get dist-upgrade -y \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /tmp/* /var/tmp/* /var/log/*
 
 # default dependencies
 RUN set -e \
@@ -13,10 +17,30 @@ RUN set -e \
     && apt-get -y install \
         autoconf automake autopoint appstream build-essential cmake git libass-dev libbz2-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev \
         libharfbuzz-dev libjansson-dev liblzma-dev libmp3lame-dev libnuma-dev libogg-dev libopus-dev libsamplerate-dev libspeex-dev libtheora-dev \
-        libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev m4 make meson nasm ninja-build patch pkg-config tar \
-        zlib1g-dev clang libva-dev libdrm-dev libjansson-dev git debhelper-compat yasm distcc ccache wget python3 \
+        libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev libmfx-dev zlib1g-dev libva-dev libdrm-dev libssl-dev \
+        m4 make meson nasm ninja-build patch pkg-config tar clang debhelper-compat yasm distcc wget python3 libvpl-dev libavcodec-dev libavfilter-dev \
+        libavformat-dev libavutil-dev libbluray-dev libdvdnav-dev libffmpeg-nvenc-dev libmpeg2-4-dev libswresample-dev libswscale-dev fakeroot dpkg-dev \
+        equivs ccache \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
+
+#RUN set -e \
+#    && apt-get update \
+#    && apt-get -y install cmake git autoconf automake build-essential libass-dev libbz2-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev \
+#        libharfbuzz-dev libjansson-dev liblzma-dev libmp3lame-dev libnuma-dev libturbojpeg0-dev libssl-dev \
+#    && apt-get -y install python3-dev python3-pip libogg-dev libopus-dev libsamplerate-dev libspeex-dev libtheora-dev libtool libtool-bin libvorbis-dev libx264-dev libxml2-dev libvpx-dev make nasm ninja-build patch tar yasm zlib1g-dev appstream \
+#    && pip3 install meson \
+#    && apt-get -y install gstreamer1.0-libav intltool libappindicator-dev libdbus-glib-1-dev libglib2.0-dev libgtk-3-dev libnotify-dev \
+#    && apt-get -y install libva-dev libdrm-dev llvm clang \
+#    && rm -rf /var/lib/apt/lists/* \
+#    && rm -rf /tmp/* /var/tmp/* /var/log/*
+
+#RUN set -e \
+#    && apt-get update \
+#    && apt-get -y install wget \
+#    && mkdir -p /deps \
+#    && wget -O /cmake-3.16.3-Linux-x86_64.tar.gz https://github.com/HandBrake/HandBrake-toolchains/releases/download/1.0/cmake-3.16.3-Linux-x86_64.tar.gz \
+#    && tar -C /deps -xvf /cmake-3.16.3-Linux-x86_64.tar.gz
 
 # gtk stuff
 RUN set -e \
@@ -25,3 +49,5 @@ RUN set -e \
         libgstreamer-plugins-base1.0-dev libgtk-3-dev libgudev-1.0-dev libnotify-dev libwebkit2gtk-4.0-dev \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
+
+ENTRYPOINT echo hello && sleep infinity

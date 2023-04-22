@@ -71,6 +71,7 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  the Apple iPod/iPhone or Sony PSP.
  .
  This package contains the graphical variant, ghb.
+Files: build/gtk/src/ghb /usr/bin/ghb
 
 Package: handbrake-cli
 Architecture: any
@@ -84,3 +85,4 @@ Description: versatile DVD ripper and video transcoder (command line)
  the Apple iPod/iPhone or Sony PSP.
  .
  This package contains the command-line variant, HandBrakeCLI.
+Files: build/HandBrakeCLI /usr/bin/HandBrakeCLI

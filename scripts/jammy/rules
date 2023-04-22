@@ -4,7 +4,22 @@ include /usr/share/dpkg/architecture.mk
 
 export DEB_LDFLAGS_MAINT_APPEND=-Wl,-z,defs
 
+# enable qsv on amd64
+ifeq (,$(filter-out amd64,$(DEB_HOST_ARCH)))
+confflags += --enable-qsv
+else
+confflags += --disable-qsv
+endif
+
+# enable nvenc on amd64 arm64 i386
+ifeq (,$(filter-out amd64 arm64 i386,$(DEB_HOST_ARCH)))
+confflags += --enable-nvenc --enable-nvdec --enable-numa
+else
+confflags += --disable-nvenc --disable-nvdec
+endif
+
 %:
+	bash -c "export"
 	dh $@ --builddirectory=$(DEB_BUILD_GNU_TYPE)
 
 override_dh_auto_configure:
@@ -13,13 +28,10 @@ override_dh_auto_configure:
 		--host=$(DEB_HOST_GNU_TYPE) \
 		--build=$(DEB_BUILD_GNU_TYPE) \
 		--debug=std \
-		--enable-qsv \
 		--enable-vce \
 		--enable-fdk-aac \
-		--enable-nvenc \
-		--enable-nvdec \
-		--enable-numa \
 		--enable-x265 \
+		--disable-gst \
 		--disable-gtk-update-checks \
 		$(confflags) \
 		CC="$(CC)" CXX="$(CXX)" \
