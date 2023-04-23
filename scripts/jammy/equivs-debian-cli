@@ -1,0 +1,12 @@
+Package: handbrake-cli
+Architecture: amd64
+Section: universe/graphics
+Version: _VERSION_
+Description: versatile DVD ripper and video transcoder (command line)
+ HandBrake is a versatile, easy-to-use tool for converting DVDs and other
+ videos into H.264, XViD, or Ogg formatted media.  It's particularly useful
+ for making videos that are compatible with portable video devices such as
+ the Apple iPod/iPhone or Sony PSP.
+ .
+ This package contains the command-line variant, HandBrakeCLI.
+Files: build/HandBrakeCLI /usr/bin/HandBrakeCLI
