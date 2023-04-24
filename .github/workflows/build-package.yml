@@ -64,8 +64,8 @@ jobs:
             focal
             jammy
           file: |
-            handbrake_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
+            handbrake_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
           file_target_version: ${{ github.event.inputs.flavor }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""

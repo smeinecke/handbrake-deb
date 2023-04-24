@@ -35,7 +35,7 @@ jobs:
         with:
           path: |
             cache
-          key: "${{ matrix.os-version }}-build-cache-${{ env.HB_TAG }}"
+          key: "${{ matrix.os-version }}-build-cache-${{ github.event.inputs.hb_tag  }}"
           restore-keys: |
             "${{ matrix.os-version }}-build-cache-"
       - name: Run build script
@@ -72,8 +72,8 @@ jobs:
             focal
             jammy
           file: |
-            handbrake_${{ env.HB_TAG }}~bullseye_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~bullseye_amd64.deb
+            handbrake_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
           file_target_version: bullseye
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -87,8 +87,8 @@ jobs:
             focal
             jammy
           file: |
-            handbrake_${{ env.HB_TAG }}~focal_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
+            handbrake_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
           file_target_version: focal
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -102,8 +102,8 @@ jobs:
             focal
             jammy
           file: |
-            handbrake_${{ env.HB_TAG }}~jammy_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~jammy_amd64.deb
+            handbrake_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
           file_target_version: jammy
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
