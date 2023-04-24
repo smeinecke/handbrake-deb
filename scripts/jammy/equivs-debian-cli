@@ -1,6 +1,10 @@
+Section: universe/graphics
+Priority: optional
+Homepage: https://handbrake.fr/
+Standards-Version: 3.9.2
+
 Package: handbrake-cli
 Architecture: amd64
-Section: universe/graphics
 Version: _VERSION_
 Description: versatile DVD ripper and video transcoder (command line)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
@@ -9,4 +13,4 @@ Description: versatile DVD ripper and video transcoder (command line)
  the Apple iPod/iPhone or Sony PSP.
  .
  This package contains the command-line variant, HandBrakeCLI.
-Files: build/HandBrakeCLI /usr/bin/HandBrakeCLI
+Files: build/HandBrakeCLI /usr/bin/

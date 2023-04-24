@@ -66,9 +66,8 @@ if [ "${DEB_FLAVOR}" == "jammy" ]; then
     --launch-jobs=0 --launch
   sed -i "s,_VERSION_,${HB_TAG}~${DEB_FLAVOR},g" ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   sed -i "s,_VERSION_,${HB_TAG}~${DEB_FLAVOR},g" ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian-cli
-  equivs-build --arch amd64 ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
-  equivs-build --arch amd64 ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian-cli
-  rm -vf *dbgsym*.deb
+  equivs-build -f --arch amd64 ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
+  equivs-build -f --arch amd64 ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian-cli
   mv -v *.deb ../
   mv -v *.changes ../
   mv -v *.buildinfo ../

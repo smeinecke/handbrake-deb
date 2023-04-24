@@ -1,3 +1,8 @@
+Section: universe/graphics
+Priority: optional
+Homepage: https://handbrake.fr/
+Standards-Version: 3.9.2
+
 Package: handbrake
 Architecture: amd64
 Depends: libgtk-3-0, libgdk-pixbuf-2.0-0, libglib2.0-0, libgstreamer-plugins-base1.0-0, libgstreamer1.0-0, libgudev-1.0-0, libjansson4, libpango-1.0-0
@@ -13,4 +18,7 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  the Apple iPod/iPhone or Sony PSP.
  .
  This package contains the graphical variant, ghb.
-Files: build/gtk/src/ghb /usr/bin/ghb
+Links: /usr/bin/ghb usr/bin/handbrake
+  /usr/bin/ghb usr/bin/handbrake-gtk
+
+Files: build/gtk/src/ghb /usr/bin/
