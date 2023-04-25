@@ -26,3 +26,4 @@ docker exec \
   -it $DOCKER_CONTAINER_NAME \
   /scripts/build.sh "$@"
 
+docker cp $DOCKER_CONTAINER_NAME:/*.deb .
