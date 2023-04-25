@@ -7,7 +7,7 @@ on:
     inputs:
       hb_tag:
         description: 'HandBrake Version Tag'
-        default: '1.5.1'
+        default: '1.6.1'
         required: true
 jobs:
   build:
@@ -24,13 +24,14 @@ jobs:
       - name: Download release bullseye
         run: "wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb && wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@9586d8d22921806600ea5d4a626034d0f27097b0
+        uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
             bullseye
             focal
+            jammy
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
@@ -39,17 +40,34 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@9586d8d22921806600ea5d4a626034d0f27097b0
+        uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
             bullseye
             focal
+            jammy
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
           file_target_version: bullseye
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+          debug: 1
+      - name: Github pages APT repo
+        uses: smeinecke/apt-repo-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            bullseye
+            focal
+            jammy
+          file: |
+            "handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
+          file_target_version: jammy
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1

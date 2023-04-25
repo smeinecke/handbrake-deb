@@ -5,17 +5,21 @@ on:
     inputs:
       hb_tag:
         description: 'Version Tag'
-        default: '1.5.1'
+        default: '1.6.1'
         required: true
   create:
     tags:
       - '*'
 jobs:
-  build_focal:
-    name: Build focal
+  build:
+    name: Build packages
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os-version: ["bullseye", "jammy"]
     container:
-      image: "smeinecke/handbrake-custom-build:focal"
+      image: "smeinecke/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
     steps:
       - name: Checkout code
@@ -31,87 +35,58 @@ jobs:
         with:
           path: |
             cache
-          key: "focal-build-cache-${{ env.HB_TAG }}"
+          key: "${{ matrix.os-version }}-build-cache-${{ github.event.inputs.hb_tag  }}"
           restore-keys: |
-            "focal-build-cache-"
+            "${{ matrix.os-version }}-build-cache-"
       - name: Run build script
         run: ./scripts/build.sh
         env:
-          DEB_FLAVOR: "focal"
+          DEB_FLAVOR: "${{ matrix.os-version }}"
       - name: Upload deb files
         uses: actions/upload-artifact@v3
         with:
           name: packages
           path: ./*.deb
+  add_release:
+    name: Add package to release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: packages
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./*.deb
-      - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.0
+      - name: Add bullseye release
+        uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
             bullseye
-            focal
+            jammy
           file: |
-            handbrake_${{ env.HB_TAG }}~focal_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
-          file_target_version: focal
-          public_key: ${{ secrets.APT_PUBLIC_KEY }}
+            handbrake_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
+          file_target_version: bullseye
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
-  build_bullseye:
-    name: Build bullseye
-    runs-on: ubuntu-latest
-    container:
-      image: "smeinecke/handbrake-custom-build:bullseye"
-      options: --privileged --device /dev/fuse
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Set env
-        if: startsWith(github.ref, 'refs/tags/')
-        run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Set env
-        if: github.event.inputs.hb_tag != ''
-        run: echo "HB_TAG=${{ github.event.inputs.hb_tag }}" >> $GITHUB_ENV
-      - name: Cache build
-        uses: actions/cache@v3
-        with:
-          path: |
-            cache
-          key: "bullseye-build-cache-${{ env.HB_TAG }}"
-          restore-keys: |
-            "bullseye-build-cache-"
-      - name: Run build script
-        run: ./scripts/build.sh
-        env:
-          DEB_FLAVOR: "bullseye"
-      - name: Upload deb files
-        uses: actions/upload-artifact@v3
-        with:
-          name: packages
-          path: ./*.deb
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: ./*.deb
-      - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.0
+      - name: Add jammy release
+        uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
             bullseye
-            focal
+            jammy
           file: |
-            handbrake_${{ env.HB_TAG }}~bullseye_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~bullseye_amd64.deb
-          file_target_version: bullseye
-          public_key: ${{ secrets.APT_PUBLIC_KEY }}
+            handbrake_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
+          file_target_version: jammy
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""

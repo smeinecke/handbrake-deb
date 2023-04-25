@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: build custom
+name: build package
 on:
   workflow_dispatch:
     # Inputs the workflow accepts.
@@ -9,12 +9,13 @@ on:
         type: choice
         description: 'Debian/Ubuntu Version'
         options:
+          - 'jammy'
           - 'focal'
           - 'bullseye'
         required: true
       hb_tag:
         description: 'HandBrake Version Tag'
-        default: '1.5.1'
+        default: '1.6.1'
         required: true
       release:
         type: boolean
@@ -53,7 +54,7 @@ jobs:
         with:
           files: ./*.deb
       - name: Github pages APT repo
-        uses: smeinecke/apt-repo-action@v2.1.0
+        uses: smeinecke/apt-repo-action@master
         if: github.event.inputs.release
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -61,10 +62,10 @@ jobs:
           repo_supported_version: |
             bullseye
             focal
+            jammy
           file: |
-            handbrake_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~${{ github.event.inputs.flavor }}_amd64.deb
+            handbrake_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
           file_target_version: ${{ github.event.inputs.flavor }}
-          public_key: ${{ secrets.APT_PUBLIC_KEY }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
