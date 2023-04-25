@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os-version: ["bullseye", "focal", "jammy"]
+        os-version: ["bullseye", "jammy"]
     container:
       image: "smeinecke/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
@@ -69,27 +69,11 @@ jobs:
           repo_supported_arch: amd64
           repo_supported_version: |
             bullseye
-            focal
             jammy
           file: |
             handbrake_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
             handbrake-cli_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
           file_target_version: bullseye
-          private_key: ${{ secrets.APT_SIGNING_KEY }}
-          key_passphrase: ""
-      - name: Add focal release
-        uses: smeinecke/apt-repo-action@master
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-          repo_supported_arch: amd64
-          repo_supported_version: |
-            bullseye
-            focal
-            jammy
-          file: |
-            handbrake_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
-            handbrake-cli_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
-          file_target_version: focal
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
       - name: Add jammy release
@@ -99,7 +83,6 @@ jobs:
           repo_supported_arch: amd64
           repo_supported_version: |
             bullseye
-            focal
             jammy
           file: |
             handbrake_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
