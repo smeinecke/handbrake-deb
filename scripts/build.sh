@@ -66,6 +66,9 @@ if [ "${DEB_FLAVOR}" == "jammy" ]; then
     --launch-jobs=0 --launch
   sed -i "s,_VERSION_,${HB_TAG}~${DEB_FLAVOR},g" ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   sed -i "s,_VERSION_,${HB_TAG}~${DEB_FLAVOR},g" ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian-cli
+  # workaround to force Xz compression
+  echo -e 'override_dh_builddeb:' >>/usr/share/equivs/template/debian/rules
+  echo -e '\tdh_builddeb -- -Zxz' >>/usr/share/equivs/template/debian/rules
   equivs-build -f --arch amd64 ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian
   equivs-build -f --arch amd64 ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian-cli
   mv -v *.deb ../
