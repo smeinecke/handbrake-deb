@@ -1,0 +1,46 @@
+Package: handbrake
+Version: 1.6.1~jammy
+Architecture: amd64
+Maintainer: Equivs Dummy Package Generator <root@29de3d5a06ca>
+Installed-Size: 73345
+Depends: libgtk-3-0, libgdk-pixbuf-2.0-0, libglib2.0-0, libgstreamer-plugins-base1.0-0, libgstreamer1.0-0, libgudev-1.0-0, libjansson4, libpango-1.0-0
+Recommends: gstreamer1.0-libav, gstreamer1.0-pulseaudio | gstreamer1.0-alsa, gstreamer1.0-x
+Multi-Arch: foreign
+Homepage: https://handbrake.fr/
+Priority: optional
+Section: universe/graphics
+Filename: pool/main/h/handbrake/handbrake_1.6.1~jammy_amd64.deb
+Size: 14718652
+SHA256: d4ec3070c8b3f868736695558b73c3cdff575b971f0450d4f61aeee128e4d73a
+SHA1: 8be5b05421da3900e699c59f0a29f11e95587aec
+MD5sum: 798ea34c7167068a150d4fe69a9b06b7
+Description: versatile DVD ripper and video transcoder (GTK+ GUI)
+ HandBrake is a versatile, easy-to-use tool for converting DVDs and other
+ videos into H.264, XViD, or Ogg formatted media. It's particularly useful
+ for making videos that are compatible with portable video devices such as
+ the Apple iPod/iPhone or Sony PSP.
+ .
+ This package contains the graphical variant, ghb.
+
+Package: handbrake-cli
+Version: 1.6.1~jammy
+Architecture: amd64
+Maintainer: Equivs Dummy Package Generator <root@29de3d5a06ca>
+Installed-Size: 67390
+Multi-Arch: foreign
+Homepage: https://handbrake.fr/
+Priority: optional
+Section: universe/graphics
+Filename: pool/main/h/handbrake-cli/handbrake-cli_1.6.1~jammy_amd64.deb
+Size: 11940264
+SHA256: c77ed4e12308f7d515fc6cae06ff15d6a369f1a065f0cc737fca9fc461ca4c70
+SHA1: 5e846b93b05fc144e5e6e86f06fae3e249405da3
+MD5sum: 0a0ef6dea73a16c4dae1efb5e2d00cb8
+Description: versatile DVD ripper and video transcoder (command line)
+ HandBrake is a versatile, easy-to-use tool for converting DVDs and other
+ videos into H.264, XViD, or Ogg formatted media.  It's particularly useful
+ for making videos that are compatible with portable video devices such as
+ the Apple iPod/iPhone or Sony PSP.
+ .
+ This package contains the command-line variant, HandBrakeCLI.
+

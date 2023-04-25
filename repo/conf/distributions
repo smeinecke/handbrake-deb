@@ -12,3 +12,10 @@ Components: main
 SignWith: 49BECCC2F3C2A369CF5A5B91DBB612A0781969AD
 
 
+Description: smeinecke/handbrake-deb
+Codename: jammy
+Architectures: amd64
+Components: main
+SignWith: 49BECCC2F3C2A369CF5A5B91DBB612A0781969AD
+
+
