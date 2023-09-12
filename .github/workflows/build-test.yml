@@ -1,0 +1,52 @@
+# This is a basic workflow that is manually triggered
+
+name: build package
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      flavor:
+        type: choice
+        description: 'Debian/Ubuntu Version'
+        options:
+          - 'jammy'
+          - 'focal'
+          - 'bullseye'
+          - 'bookworm'
+        required: true
+      hb_tag:
+        description: 'HandBrake Version Tag'
+        default: '1.6.1'
+        required: true
+      release:
+        type: boolean
+        description: "publish to repository"
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container:
+      image: "smeinecke/handbrake-custom-build:${{ github.event.inputs.flavor }}"
+      options: --privileged --device /dev/fuse
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: |
+            cache
+          key: "${{ github.event.inputs.flavor }}-build-cache-${{ github.event.inputs.hb_tag }}"
+          restore-keys: |
+            "${{ github.event.inputs.flavor }}-build-cache-"
+      - name: Run build script
+        run: ./scripts/build.sh
+        env:
+          DEB_FLAVOR: "${{ github.event.inputs.flavor }}"
+          HB_TAG: "${{ github.event.inputs.hb_tag }}"
+      - name: Upload deb files
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: ./*.deb
+
