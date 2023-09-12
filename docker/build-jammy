@@ -18,9 +18,9 @@ RUN set -e \
         autoconf automake autopoint appstream build-essential cmake git libass-dev libbz2-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev \
         libharfbuzz-dev libjansson-dev liblzma-dev libmp3lame-dev libnuma-dev libogg-dev libopus-dev libsamplerate-dev libspeex-dev libtheora-dev \
         libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev libmfx-dev zlib1g-dev libva-dev libdrm-dev libssl-dev \
-        m4 make meson nasm ninja-build patch pkg-config tar clang debhelper-compat yasm distcc wget python3 libvpl-dev libavcodec-dev libavfilter-dev \
-        libavformat-dev libavutil-dev libbluray-dev libdvdnav-dev libffmpeg-nvenc-dev libmpeg2-4-dev libswresample-dev libswscale-dev fakeroot dpkg-dev \
-        equivs ccache \
+        m4 make meson nasm ninja-build patch pkg-config tar clang debhelper-compat yasm distcc wget python3 python-is-python3 libvpl-dev libavcodec-dev \
+        libavfilter-dev libavformat-dev libavutil-dev libbluray-dev libdvdnav-dev libffmpeg-nvenc-dev libmpeg2-4-dev libswresample-dev libswscale-dev \
+        fakeroot dpkg-dev equivs ccache \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
