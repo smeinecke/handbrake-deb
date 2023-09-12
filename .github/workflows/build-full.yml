@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os-version: ["bullseye", "jammy"]
+        os-version: ["bookworm", "bullseye", "jammy"]
     container:
       image: "smeinecke/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
@@ -68,11 +68,27 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            bookworm
             bullseye
             jammy
           file: |
             handbrake_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
             handbrake-cli_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
+          file_target_version: bullseye
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+      - name: Add bookworm release
+        uses: smeinecke/apt-repo-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            bookworm
+            bullseye
+            jammy
+          file: |
+            handbrake_${{ github.event.inputs.hb_tag  }}~bookworm_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag  }}~bookworm_amd64.deb
           file_target_version: bullseye
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -82,6 +98,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            bookworm
             bullseye
             jammy
           file: |

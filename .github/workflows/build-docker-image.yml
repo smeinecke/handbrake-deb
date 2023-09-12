@@ -11,8 +11,8 @@ on:
           - 'focal'
           - 'jammy'
           - 'bullseye'
+          - 'bookworm'
         required: true
-
 jobs:
   docker:
     runs-on: ubuntu-latest

@@ -12,6 +12,7 @@ on:
           - 'jammy'
           - 'focal'
           - 'bullseye'
+          - 'bookworm'
         required: true
       hb_tag:
         description: 'HandBrake Version Tag'
@@ -60,6 +61,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            bookworm
             bullseye
             focal
             jammy

@@ -29,6 +29,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            bookworm
             bullseye
             focal
             jammy
@@ -45,6 +46,24 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            bookworm
+            bullseye
+            focal
+            jammy
+          file: |
+            "handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
+          file_target_version: jammy
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+          debug: 1
+      - name: Github pages APT repo
+        uses: smeinecke/apt-repo-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            bookworm
             bullseye
             focal
             jammy
@@ -61,13 +80,14 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            bookworm
             bullseye
             focal
             jammy
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
-          file_target_version: jammy
+            "handbrake_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
+          file_target_version: bookworm
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
