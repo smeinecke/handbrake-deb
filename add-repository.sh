@@ -6,7 +6,7 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 ${SUDO} apt-get update
-${SUDO} apt-get -y install lsb-release ca-certificates curl
+${SUDO} apt-get -y install lsb-release ca-certificates wget
 ${SUDO} wget -O /usr/share/keyrings/smeinecke.github.io-handbrake-deb.key https://smeinecke.github.io/handbrake-deb/public.key
 ${SUDO} apt-add-repository "deb [signed-by=/usr/share/keyrings/smeinecke.github.io-handbrake-deb.key arch=amd64] https://smeinecke.github.io/handbrake-deb/repo $(lsb_release -sc) main"
 ${SUDO} apt-get update
