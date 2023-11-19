@@ -33,6 +33,7 @@ override_dh_auto_configure:
 		--enable-x265 \
 		--disable-gst \
 		--disable-gtk-update-checks \
+		--lto=off \
 		$(confflags) \
 		CC="$(CC)" CXX="$(CXX)" \
 		CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)" CPPFLAGS="$(CPPFLAGS)"
