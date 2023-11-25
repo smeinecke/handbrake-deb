@@ -20,7 +20,7 @@ RUN set -e \
         libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev libmfx-dev zlib1g-dev libva-dev libdrm-dev libssl-dev \
         m4 make meson nasm ninja-build patch pkg-config tar clang debhelper-compat yasm distcc wget python3 python-is-python3 libvpl-dev libavcodec-dev \
         libavfilter-dev libavformat-dev libavutil-dev libbluray-dev libdvdnav-dev libffmpeg-nvenc-dev libmpeg2-4-dev libswresample-dev libswscale-dev \
-        fakeroot dpkg-dev equivs ccache cargo \
+        fakeroot dpkg-dev equivs ccache curl \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
@@ -49,6 +49,10 @@ RUN set -e \
         libgstreamer-plugins-base1.0-dev libgtk-3-dev libgudev-1.0-dev libnotify-dev libwebkit2gtk-4.0-dev \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
+
+# Get Rust
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
 
 # cargo-c
 RUN cargo install cargo-c \
