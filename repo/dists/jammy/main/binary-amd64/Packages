@@ -1,19 +1,18 @@
 Package: handbrake
-Version: 1.6.1~jammy
+Version: 1.7.1~jammy
 Architecture: amd64
-Maintainer: Equivs Dummy Package Generator <root@29de3d5a06ca>
-Installed-Size: 73345
-Depends: libgtk-3-0, libgdk-pixbuf-2.0-0, libglib2.0-0, libgstreamer-plugins-base1.0-0, libgstreamer1.0-0, libgudev-1.0-0, libjansson4, libpango-1.0-0
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Installed-Size: 210381
+Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.35), libcairo2 (>= 1.2.4), libgcc-s1 (>= 3.0), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.71.1), libgtk-3-0 (>= 3.21.5), libjansson4 (>= 2.0.1), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libpango-1.0-0 (>= 1.14.0), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 11), libtheora0 (>= 1.0), libturbojpeg, libva-drm2 (>= 1.1.0), libva2 (>= 1.8.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx7 (>= 1.10.0), libx264-163 (>= 2:0.163.3060+git5db6aa6), libxml2 (>= 2.9.1), zlib1g (>= 1:1.1.4)
 Recommends: gstreamer1.0-libav, gstreamer1.0-pulseaudio | gstreamer1.0-alsa, gstreamer1.0-x
-Multi-Arch: foreign
 Homepage: https://handbrake.fr/
 Priority: optional
-Section: universe/graphics
-Filename: pool/main/h/handbrake/handbrake_1.6.1~jammy_amd64.deb
-Size: 14718652
-SHA256: d4ec3070c8b3f868736695558b73c3cdff575b971f0450d4f61aeee128e4d73a
-SHA1: 8be5b05421da3900e699c59f0a29f11e95587aec
-MD5sum: 798ea34c7167068a150d4fe69a9b06b7
+Section: graphics
+Filename: pool/main/h/handbrake/handbrake_1.7.1~jammy_amd64.deb
+Size: 58266772
+SHA256: 61ae33d0b403e0c451a6400cfba44bfb37feaad30dc6f41ba952cc69528f4469
+SHA1: ef7eb8f5be66813708b3d4396a8d840e6d5e61ca
+MD5sum: ca6ecf9f9290d3e2a739c30628f4a471
 Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media. It's particularly useful
@@ -23,19 +22,20 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  This package contains the graphical variant, ghb.
 
 Package: handbrake-cli
-Version: 1.6.1~jammy
+Source: handbrake
+Version: 1.7.1~jammy
 Architecture: amd64
-Maintainer: Equivs Dummy Package Generator <root@29de3d5a06ca>
-Installed-Size: 67390
-Multi-Arch: foreign
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Installed-Size: 198925
+Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.35), libgcc-s1 (>= 3.0), libjansson4 (>= 2.0.1), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 11), libtheora0 (>= 1.0), libturbojpeg, libva-drm2 (>= 1.1.0), libva2 (>= 1.8.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx7 (>= 1.10.0), libx264-163 (>= 2:0.163.3060+git5db6aa6), libxml2 (>= 2.7.4), zlib1g (>= 1:1.1.4)
 Homepage: https://handbrake.fr/
 Priority: optional
-Section: universe/graphics
-Filename: pool/main/h/handbrake-cli/handbrake-cli_1.6.1~jammy_amd64.deb
-Size: 11940264
-SHA256: c77ed4e12308f7d515fc6cae06ff15d6a369f1a065f0cc737fca9fc461ca4c70
-SHA1: 5e846b93b05fc144e5e6e86f06fae3e249405da3
-MD5sum: 0a0ef6dea73a16c4dae1efb5e2d00cb8
+Section: graphics
+Filename: pool/main/h/handbrake/handbrake-cli_1.7.1~jammy_amd64.deb
+Size: 52423808
+SHA256: bbe09a3ae4e1156c2deacb914c7ccc9690c43c828a5e943656364b4390bd34b2
+SHA1: ec79e9bbb86da73f5c887417682f6e19a3d5e7da
+MD5sum: 537baf8a5013ce436c8f8365e216d0a4
 Description: versatile DVD ripper and video transcoder (command line)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media.  It's particularly useful
