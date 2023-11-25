@@ -18,7 +18,7 @@ WORKDIR="${PWD}"
 git config --global advice.detachedHead false
 
 # Enable ccache
-export PATH="/usr/lib/ccache:${PATH}"
+export PATH="/root/.cargo/bin:/usr/lib/ccache:${PATH}"
 export CCACHE_DIR="${WORKDIR}/cache/ccache"
 
 # Checkout handbreak
