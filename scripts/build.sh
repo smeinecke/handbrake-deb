@@ -50,6 +50,9 @@ fi
 cmake --version | head -n 1
 chmod  +x configure
 
+# Set build options
+rustup default stable
+
 # if [ "${DEB_FLAVOR}" == "jammy" ]; then
 #   echo "* Workaround as build via normal dpkg-buildpackage does not work on jammy"
 #   echo "* Build manually and use equivs to generate deb package"
