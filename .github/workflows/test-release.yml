@@ -19,10 +19,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Download release jammy
+        run: >
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb
       - name: Download release focal
         run: >
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb
       - name: Download release bullseye
         run: >
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb && \
@@ -30,8 +34,8 @@ jobs:
       - name: Download release bookworm
         run: >
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
-      - name: Github pages APT repo
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb
+      - name: Github pages APT repo (focal)
         uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -48,7 +52,7 @@ jobs:
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
-      - name: Github pages APT repo
+      - name: Github pages APT repo (jammy)
         uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -65,7 +69,7 @@ jobs:
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
-      - name: Github pages APT repo
+      - name: Github pages APT repo (bullseye)
         uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -82,7 +86,7 @@ jobs:
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
-      - name: Github pages APT repo
+      - name: Github pages APT repo (bookworm)
         uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
