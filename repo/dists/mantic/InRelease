@@ -2,7 +2,7 @@
 Hash: SHA512
 
 Codename: mantic
-Date: Sat, 25 Nov 2023 22:13:19 UTC
+Date: Sat, 25 Nov 2023 22:14:17 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
@@ -20,17 +20,17 @@ SHA256:
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmVicX8ACgkQ27YSoHgZ
-aa3G9w/+OiN1C4yFGYmMKwK3TewIc3XMTnhMeIfdRYdmaFLRV2YzePoBv16nyivh
-qo7kINd9xQV5KEzL6PMZx/O4YcSWriunly8OzFUz1w8bFeqcg0mO/6tqpAMlbgA2
-YoVNwHZrKpyM+AFeM/lSkPyEH7KHFQeeWly20fo+eJqWaqZHzbPLCU+4d5O9QZrI
-+5LOWeJUbD9mFR/hcGzpepiFmy5vb+OCNxdDqyFekzVgnDPV7W9ivIpEdFrEs8Z2
-9Ykte9zP7yYunn4Q/qLKD1nlmFt+bBV8LQW4uufv3I9RsdIOlOt7j8PH+HprsK6B
-bdcK7kRaLkvg11YNGtGTFScdNwO9UBbvcxu1Qwb/Isrbl0LxxgmvYKMuO8KU3r2h
-sNSiwD3PzoN2rEiAbnlAPrsXDZ2ixyO4CEzcvnshSaUgxobaIoCcW5YL3jlncVg7
-zler6dspRK/5z0P5ooGPIl/8z7+0PI83fkcxjNoRmaTfUv1FMsmeS7PO3E9XACgL
-hbhsAnjwVPpdUBH4S7EPIC76DuIihdW/6broXrJeN7wWpxf2PdsnvDOJ26kZ3xaW
-hhR/RVcmx8ZrPyE6q++bwX+YAB86K7jaD6U93EDuGuJWbyoxpyuUSPc+mJCNdUzy
-u9h/kuN49AGyfX3uEaJSO+QS6QD7qlj1ZAZpwLAd4oz2j6g+/94=
-=VSR0
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmVicbkACgkQ27YSoHgZ
+aa1huBAAwJNxzdLeRjXIkDgaBsZ9LqGMNG/+pnS/9LWkrLxtiaYJE6HD8EFqH1wh
+FmCDoDpozAKzfO2XCOFDI85szdJFCMkdsUGMjDVV1qVGXlRW6oVIMdcIdYgeLjQa
+Ma3B/jhXILIE0qRf9jN3UCkL9uQfWTlLUIGypfIHcApiRJJjzRr0budTWNDfqiSU
+Jqcf7L4WD3TzSy8ObDFOWamFwK9nZnaEojq71F4DCo17HeNpCtyhr4VPv/xW3fXf
+UD3aa0/yUU8ERj/1okWLrGg/CkQokB5xRizpP45ngfeRb2jsp3p2tj+ghJO1bK1U
+0c8ls/7GsjvCd+h5Xl6BdoeTRKRgZWpPg5+qYXv1IwQWhquXMCpM+Ec3vM984BxE
+Lmb7k/jf/RvQRrVAhPAUy6QbynYfQOokoX1ZBub3HGteEq69T6aRFigeMf2clC8A
+okvyRxayT8md/hp7mi26ZAaAOxkz7Hg97xxIxJDulzor8fA2KvD9JTTzLdkvfnSK
+JSAETjMtT8trb3B17GZLB7uZ2Y0eDPOMnB/9TRKRo5l2QYNmf49u6mAgpDx1fsWw
+o475i2Y5Wb3dlXtNHsT2+5Dj2w12UtUxaQly/dBQIut9rmfH0ppJ8QvgAJpT0EfJ
+k6KS6JUgqPe0v+dz7JILc1LzRNq9h4RGdLjqdty6jAvCSHTNXXM=
+=Lo2+
 -----END PGP SIGNATURE-----
