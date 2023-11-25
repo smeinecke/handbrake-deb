@@ -2,35 +2,35 @@
 Hash: SHA512
 
 Codename: mantic
-Date: Sat, 25 Nov 2023 22:12:33 UTC
+Date: Sat, 25 Nov 2023 22:13:19 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
 MD5Sum:
- d41d8cd98f00b204e9800998ecf8427e 0 main/binary-amd64/Packages
- 7029066c27ac6f5ef18d660d5741979a 20 main/binary-amd64/Packages.gz
+ 407be8aabf359c10dad8ade24566137d 2942 main/binary-amd64/Packages
+ 8a26f6beb8d9c33f8a8d782a5d087430 1094 main/binary-amd64/Packages.gz
  bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
 SHA1:
- da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-amd64/Packages
- 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-amd64/Packages.gz
+ 571221af3799515978fac325d4123d254668bcf0 2942 main/binary-amd64/Packages
+ fdcc085f83e41e103e267de9592768cf1cff01fa 1094 main/binary-amd64/Packages.gz
  1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
 SHA256:
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-amd64/Packages
- 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-amd64/Packages.gz
+ bd8ef781b7696ee30e83eda1ad50b1774cc205a9aabee3a334f7179831341924 2942 main/binary-amd64/Packages
+ 1916dc0f38ff11cc0827615a68782caac94dc5b33890fa5112aa6573c122df29 1094 main/binary-amd64/Packages.gz
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmVicVEACgkQ27YSoHgZ
-aa0fqw//fcf8ymy93FIT/MUFqmim5WzfRKcFAz0re5WgXFBg2N3J6Sv9/E0lcAzG
-9Mf6XIZydm6Ny7h36QwJywp06YfmWOtkIDvWs531+DAg8GmqoJTtqoit5d12uQyM
-oFcWvhM4S8WLpB2ZULlfi+XvmUBXS0bA/C4R3bOsXO5RFe0VwsKOmzNQBz9avv0p
-oTF1hOv3fsCo7u/LIafa9IfpLn/Cm5s/yHvb1ERZdF8T176TEGkkGXsppoJ8uNIH
-Nby9RZVz1yvUwLkQE2QUfeMPMEXKTc83hDeSoVaXdMHNDBXbxIcQVpcb+3T3Q3fA
-hIgkwqtf6t4JgNlu2bdoLqLYy18T7g22/ONAl42xjPJYsNMMaKbKQrIyoM2BBRXX
-smSnZZ2fkF/Y5WsqKPRosqrKDMbufS51gL+FmSSMJCbtsb38TM32ir7h284IbyyF
-zf7F5cU6qBqrpx6/IW8e1gHpDuEf3tKd/ctBWrmWKVJvPtN27t1K+TYzp+UsDlUO
-TB9Sw/iikdBLaCDjAF5+WG4LSiXAGIsK+/wj2XdXTRobLg6N3McUeoYkasqbUia/
-VjBcJQ0WBVhhzw29n/6YtDFP3ltGyu026zvICVZo/VWSuEMuAD2YTH7OwvRLGAYL
-utJDU088USXR7bvt6moaWL+rtzOtxZunTxRzk5uKnwCBYLrKnpA=
-=U914
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmVicX8ACgkQ27YSoHgZ
+aa3G9w/+OiN1C4yFGYmMKwK3TewIc3XMTnhMeIfdRYdmaFLRV2YzePoBv16nyivh
+qo7kINd9xQV5KEzL6PMZx/O4YcSWriunly8OzFUz1w8bFeqcg0mO/6tqpAMlbgA2
+YoVNwHZrKpyM+AFeM/lSkPyEH7KHFQeeWly20fo+eJqWaqZHzbPLCU+4d5O9QZrI
++5LOWeJUbD9mFR/hcGzpepiFmy5vb+OCNxdDqyFekzVgnDPV7W9ivIpEdFrEs8Z2
+9Ykte9zP7yYunn4Q/qLKD1nlmFt+bBV8LQW4uufv3I9RsdIOlOt7j8PH+HprsK6B
+bdcK7kRaLkvg11YNGtGTFScdNwO9UBbvcxu1Qwb/Isrbl0LxxgmvYKMuO8KU3r2h
+sNSiwD3PzoN2rEiAbnlAPrsXDZ2ixyO4CEzcvnshSaUgxobaIoCcW5YL3jlncVg7
+zler6dspRK/5z0P5ooGPIl/8z7+0PI83fkcxjNoRmaTfUv1FMsmeS7PO3E9XACgL
+hbhsAnjwVPpdUBH4S7EPIC76DuIihdW/6broXrJeN7wWpxf2PdsnvDOJ26kZ3xaW
+hhR/RVcmx8ZrPyE6q++bwX+YAB86K7jaD6U93EDuGuJWbyoxpyuUSPc+mJCNdUzy
+u9h/kuN49AGyfX3uEaJSO+QS6QD7qlj1ZAZpwLAd4oz2j6g+/94=
+=VSR0
 -----END PGP SIGNATURE-----
