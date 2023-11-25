@@ -15,7 +15,6 @@ override_dh_auto_configure:
 		--enable-nvdec \
 		--enable-numa \
 		--enable-x265 \
-		--disable-gtk-update-checks \
 		CC="$(CC)" CXX="$(CXX)" \
 		CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)" CPPFLAGS="$(CPPFLAGS)"
 

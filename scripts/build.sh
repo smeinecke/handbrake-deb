@@ -61,7 +61,6 @@ if [ "${DEB_FLAVOR}" == "jammy" ]; then
     --enable-vce \
     --enable-fdk-aac \
     --enable-x265 \
-    --disable-gtk-update-checks \
     --enable-qsv --enable-nvenc --enable-nvdec --enable-numa \
     --launch-jobs=0 --launch
   sed -i "s,_VERSION_,${HB_TAG}~${DEB_FLAVOR},g" ${SCRIPTDIR}/${DEB_FLAVOR}/equivs-debian

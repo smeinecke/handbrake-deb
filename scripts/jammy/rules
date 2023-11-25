@@ -36,7 +36,6 @@ override_dh_auto_configure:
 		--enable-fdk-aac \
 		--enable-x265 \
 		--disable-gst \
-		--disable-gtk-update-checks \
 		--lto=off \
 		$(confflags) \
 		CC="$(CC)" CXX="$(CXX)" \
