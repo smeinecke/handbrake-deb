@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 vercomp () {
     if [[ $1 == $2 ]]
@@ -37,9 +36,13 @@ if [ -z $1 ]; then
     exit 1
 fi
 
+set -e
+
+DEBIAN_FRONTEND=noninteractive apt-get -yq install curl jq
+
 remote_current_release=$(curl -sL https://api.github.com/repos/$1/releases/latest | jq -r ".tag_name")
 remote_current_release="${remote_current_release/Release\//}"
-echo "::set-output name=remote_current_release::${remote_current_release}"
+echo "name=remote_current_release::${remote_current_release}" >> $GITHUB_OUTPUT
 if [ -z $remote_current_release ]; then
     echo "own_current_release empty!"
 fi
@@ -49,14 +52,16 @@ if [ -z $local_repo ]; then
     local_repo="${GITHUB_REPOSITORY}"
 fi
 own_current_release=$(curl -sL https://api.github.com/repos/${local_repo}/releases/latest | jq -r ".tag_name")
-echo "::set-output name=own_current_release::${own_current_release}"
+echo "name=own_current_release::${own_current_release}" >> $GITHUB_OUTPUT
 if [ -z $own_current_release ]; then
     echo "own_current_release empty!"
 fi
+
+set +e
 vercomp ${remote_current_release} ${own_current_release}
 case $? in
     0) op='equal';;
     1) op='newer';;
     2) op='older';;
 esac
-echo "::set-output name=vercomp::$op"
+echo "name=vercomp::$op" >> $GITHUB_STATE
