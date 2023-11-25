@@ -50,4 +50,8 @@ RUN set -e \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
+# cargo-c
+RUN cargo install cargo-c \
+    && cargo cinstall --release
+
 ENTRYPOINT echo hello && sleep infinity

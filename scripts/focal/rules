@@ -25,14 +25,14 @@ endif
 	dh $@ --builddirectory=build
 
 override_dh_auto_configure:
-	bash ./configure --prefix=/usr --build build --debug=std \
-		--enable-qsv \
+	bash ./configure \
+		--prefix=/usr \
+		--build build \
+		--debug=std \
 		--enable-vce \
 		--enable-fdk-aac \
-		--enable-nvenc \
-		--enable-nvdec \
-		--enable-numa \
 		--enable-x265 \
+		--enable-libdovi \
 		--disable-gst \
 		--lto=off \
 		$(confflags) \
