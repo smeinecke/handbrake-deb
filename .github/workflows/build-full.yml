@@ -11,6 +11,9 @@ on:
     tags:
       - '*'
 
+env:
+  HB_TAG: ${{ github.event.inputs.hb_tag }}
+
 jobs:
   build:
     name: Build packages
@@ -18,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os-version: ["bookworm", "bullseye", "jammy", "focal"]
+        os-version: ["bookworm", "bullseye", "mantic", "jammy", "focal"]
     container:
       image: "ghcr.io/${{ github.repository_owner }}/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
@@ -39,7 +42,7 @@ jobs:
         with:
           path: |
             cache
-          key: "${{ matrix.os-version }}-build-cache-${{ github.event.inputs.hb_tag  }}"
+          key: "${{ matrix.os-version }}-build-cache-${{ env.HB_TAG }}"
           restore-keys: |
             "${{ matrix.os-version }}-build-cache-"
       - name: Run build script
@@ -59,6 +62,12 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: packages
+      - name: Set env
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Set env
+        if: github.event.inputs.hb_tag != ''
+        run: echo "HB_TAG=${{ github.event.inputs.hb_tag }}" >> $GITHUB_ENV
       - name: Display structure of downloaded files
         run: ls -R
       - name: Release
@@ -72,13 +81,14 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
-            bookworm
             bullseye
-            jammy
+            bookworm
             focal
+            jammy
+            mantic
           file: |
-            handbrake_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
-            handbrake-cli_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
+            handbrake_${{ env.HB_TAG }}~bullseye_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~bullseye_amd64.deb
           file_target_version: bullseye
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -88,14 +98,32 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
-            bookworm
             bullseye
-            jammy
+            bookworm
             focal
+            jammy
+            mantic
           file: |
-            handbrake_${{ github.event.inputs.hb_tag  }}~bookworm_amd64.deb
-            handbrake-cli_${{ github.event.inputs.hb_tag  }}~bookworm_amd64.deb
+            handbrake_${{ env.HB_TAG }}~bookworm_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~bookworm_amd64.deb
           file_target_version: bullseye
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+      - name: Add mantic release
+        uses: smeinecke/apt-repo-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            bullseye
+            bookworm
+            focal
+            jammy
+            mantic
+          file: |
+            handbrake_${{ env.HB_TAG }}~mantic_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~mantic_amd64.deb
+          file_target_version: jammy
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
       - name: Add jammy release
@@ -104,13 +132,14 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
-            bookworm
             bullseye
-            jammy
+            bookworm
             focal
+            jammy
+            mantic
           file: |
-            handbrake_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
-            handbrake-cli_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
+            handbrake_${{ env.HB_TAG }}~jammy_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~jammy_amd64.deb
           file_target_version: jammy
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -120,13 +149,14 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
-            bookworm
             bullseye
-            jammy
+            bookworm
             focal
+            jammy
+            mantic
           file: |
-            handbrake_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
-            handbrake-cli_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
+            handbrake_${{ env.HB_TAG }}~focal_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
           file_target_version: focal
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""

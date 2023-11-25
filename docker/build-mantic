@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:mantic
 
 ADD assets/dpkg_nodoc /etc/dpkg/dpkg.cfg.d/90_nodoc
 ADD assets/dpkg_nolocale /etc/dpkg/dpkg.cfg.d/90_nolocale
