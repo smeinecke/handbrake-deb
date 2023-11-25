@@ -3,7 +3,25 @@
 LDFLAGS += -Wl,-z,defs
 LDFLAGS += -Wl,--as-needed
 
+# enable qsv on amd64
+ifeq (,$(filter-out amd64,$(DEB_HOST_ARCH)))
+confflags += --enable-qsv
+else
+confflags += --disable-qsv
+endif
+
+# enable nvenc on amd64 arm64 i386
+ifeq (,$(filter-out amd64 arm64 i386,$(DEB_HOST_ARCH)))
+confflags += --enable-nvenc \
+			 --enable-nvdec \
+			 --enable-numa
+else
+confflags += --disable-nvenc \
+			 --disable-nvdec
+endif
+
 %:
+	bash -c "export"
 	dh $@ --builddirectory=build
 
 override_dh_auto_configure:
@@ -15,6 +33,9 @@ override_dh_auto_configure:
 		--enable-nvdec \
 		--enable-numa \
 		--enable-x265 \
+		--disable-gst \
+		--lto=off \
+		$(confflags) \
 		CC="$(CC)" CXX="$(CXX)" \
 		CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)" CPPFLAGS="$(CPPFLAGS)"
 
