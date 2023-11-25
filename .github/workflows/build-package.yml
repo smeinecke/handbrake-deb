@@ -60,7 +60,7 @@ jobs:
           files: ./*.deb
       - name: Github pages APT repo
         uses: smeinecke/apt-repo-action@master
-        if: github.event.inputs.release
+        if: github.event.inputs.release == true
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
