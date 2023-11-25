@@ -50,6 +50,8 @@ fi
 cmake --version | head -n 1
 chmod  +x configure
 
+source "$HOME/.cargo/env"
+
 # Set build options
 rustup default stable
 
