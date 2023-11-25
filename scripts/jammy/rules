@@ -27,7 +27,7 @@ endif
 	dh $@ --builddirectory=$(DEB_BUILD_GNU_TYPE)
 
 override_dh_auto_configure:
-	bash ./configure \
+	bash rustup default stable && ./configure \
 		--prefix=/usr \
 		--host=$(DEB_HOST_GNU_TYPE) \
 		--build=$(DEB_BUILD_GNU_TYPE) \
