@@ -62,4 +62,4 @@ case $? in
     1) op='newer';;
     2) op='older';;
 esac
-echo "vercomp=$op" >> $GITHUB_STATE
+echo "vercomp=$op" >> $GITHUB_OUTPUT
