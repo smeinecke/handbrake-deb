@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Codename: mantic
+Date: Sat, 25 Nov 2023 22:11:56 UTC
+Architectures: amd64
+Components: main
+Description: smeinecke/handbrake-deb
+MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-amd64/Packages
+ 7029066c27ac6f5ef18d660d5741979a 20 main/binary-amd64/Packages.gz
+ bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
+SHA1:
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-amd64/Packages
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-amd64/Packages.gz
+ 1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
+SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-amd64/Packages
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-amd64/Packages.gz
+ 81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmVicSwACgkQ27YSoHgZ
+aa3mBQ//dcNNcVZV6PyMQGK6KJlrCs7db0GZv9pkBXJPAaaJTdUp9CHjL+xbJCXx
+znUbYH9D8j0tLUAW8Yvaht7fUCNvf6c/di8KTdnFcbfaNo8oohSAnOx/bFOonYir
+IA5sqfM5g1r4sxGCm2+171n4V+ysptNzbxwgKjnlaC97DZa1fMT7uVy87rddP3p3
+dH7aWKWoC7A1Qrts7N3ML/ch6qcoTX/XPHZeEgtR0rnu65BwZbKEmGi9Qe3a8cG+
+NJbl+F6tiFF6lfV79TWKO0aAwEWFzYkRTGRrZBT7mrbnrqrApIihkwURfRaeTpVd
+mJ07U9lFPB9qYSb/60C+dR0NsvsJBbPI0fEB/RL3jhTvZjbDzMCjlPgHbaJ5XR2p
+xA3g7CGbt0DNnB+9aPpcTBbAH8b705cas+JVMt7/sCYp5kGGFahdSkFWkEjFKvLU
+/wZOLQsy1DivOgCFgsTiZ3HgKhpD6Dqq+xdKZYaOiC33VN2KYEcq9bka9CRilvee
+BvoDFSUsRRTCR2UwJYJYy2+SaheEYYupmGhJeUDFPq5hXdLRPvL7o2/+9ZN/CRoJ
+dm6mMDZY1HOI5lkPw+vDGFSQDnqgZK798pMrAxCfgnuCBhuL+aXq7F/9x+Qbtwwa
+wtDOzsyyJhMT2o0Nq644pgNLEy29wk5wwkk2oo+0M5Y/ORkTq+M=
+=4aiy
+-----END PGP SIGNATURE-----

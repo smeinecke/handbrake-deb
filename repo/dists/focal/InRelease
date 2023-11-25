@@ -2,7 +2,7 @@
 Hash: SHA512
 
 Codename: focal
-Date: Tue, 25 Apr 2023 01:14:29 UTC
+Date: Sat, 25 Nov 2023 22:11:56 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
@@ -20,17 +20,17 @@ SHA256:
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmRHKXUACgkQ27YSoHgZ
-aa2luA//VXiP8IpfFUNp/27KFzNv/YlBfPQQqP0zYcfyWRgGOUIwktKIbcf9ytqC
-9+IqTTBuMF7OcdpcpTVjD065f1wMrx8/0fmgXX9iZem+fxq7KFxW3JWKaXVfHsUn
-/3oYY2Bax4caKVLZK0iLVl1R2i6U8dWYm3UvGs3Uba15XzJWEab6xOaq6r0RVtnt
-AAyNnH7vzhcWwUmnPyyrvW/zlHOoLJ4fVIVim413IWREdFSP0CGfwVwUyr2/rQ6T
-8cqm3iL+D7KQIQTLg4VN6t7Pyf6joDAbrjPnNC6ybovpPsruwO86fmf/x7378VJO
-SjCYTdexUb6Rvojq5a6txnDYqMcjU03qNQ26eJ0hUIsoKl9M5uGjK5Ux8YSl2mIX
-kV0rdKZdFkE+uunraWwEpjYvgPVu1kLq33gAiHtBkPnCpHfeEL9z6bYY8/sBEoDg
-hYhSC/xFlgAg4EfCQFZFf7P9vyJrS4vOBPI+ly1b24AfQjrY6o3Tc1xh7XBokiBk
-M/zAISl7g8VZC3TZNezlXGSmFxX0cP/3NMELpAqrmrq6g+SRgcCdkIH5o+2zbPjB
-eeXbY//e2uiQi712zaKa1j3d3503rpTQkMhrmbypqrk4G8PxwA6gqE9qMfKSSYjj
-1SgYELEY3m3cCUIK/+7krLkohKjEMHq+NUxrCAxtN0P9wOnkqqI=
-=XrBx
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmVicSwACgkQ27YSoHgZ
+aa27ug/+LRGSkTMhiXHVhib/YiuRH5/+3UrYU7kRIRNahpZv4scf+Ik04wrw80hz
+hlTDqb1j1j39eVkZ7TGrRZbWqN5thx4jsVHW9A/HTPIxRW1SYrlISE9bsD6gxLLJ
+86eJvnq6rPRdssA0Gw0nZnqu/Uu+rNebbr852vKtEopq484k6lE+3Qm4GC/ThP+T
+Xaaq/lpOjETal6kSW6z5fYY4WU/BzcvMx3ASsSvl90SgNEyjiuRGHHJLTPNu6ONQ
+15nHzGrUKdM/hWeZ6dYN8OxRIFznI3oUbsMeCG8Cu2kMyNRANgLAyh1xnO2MykLe
+bFzrsUJFaNT+fX6nu95RxoUdtkLweVRnWd6vNnPzLsZ0trNYXr/evGWR4mzyiQdB
+BEWxngKULu22JhIwjUM+zAhl+sE1Dhh2OAY1XuT+RbAqs0SpBTu/sKEosPm7ezDX
+2aohIhagJdjtUNVfKhPh577nAFHn7SuCTGDFOqSkFoqrSIxFCXuaKzWya45OVIY/
+apX3ytW/pEVP3NRCHJ7kWq8dBg+2oRMqq6CXBj3wlxAGmpmi3bApUmBftftoCuGQ
+92FeCxlKxAZch9UjqK9RLj/r5bef/TlnzXd1JvlIi7LZMQnfCcmmIjrDy5/GVASZ
+nanR5t3jHmLqXpfnXKeKWPUybBnM8wwLN/jbkG+FWqEBQQv4fkQ=
+=ZIkx
 -----END PGP SIGNATURE-----
