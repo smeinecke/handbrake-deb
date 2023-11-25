@@ -54,7 +54,8 @@ Build-Depends:
  nasm,
  python3,
  yasm,
- cargo
+ cargo,
+ cargo-c
 Rules-Requires-Root: no
 
 Package: handbrake
