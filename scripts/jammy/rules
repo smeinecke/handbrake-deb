@@ -35,6 +35,7 @@ override_dh_auto_configure:
 		--enable-vce \
 		--enable-fdk-aac \
 		--enable-x265 \
+		--enable-libdovi \
 		--disable-gst \
 		--lto=off \
 		$(confflags) \
