@@ -21,13 +21,17 @@ on:
       release:
         type: boolean
         description: "publish to repository"
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     container:
-      image: "smeinecke/handbrake-custom-build:${{ github.event.inputs.flavor }}"
+      image: "ghcr.io/${{ github.repository_owner }}/handbrake-custom-build:${{ github.event.inputs.flavor }}"
       options: --privileged --device /dev/fuse
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
