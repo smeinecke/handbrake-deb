@@ -38,4 +38,4 @@ jobs:
           context: "{{defaultContext}}:docker"
           file: "build-${{ github.event.inputs.flavor }}"
           push: true
-          tags: "${{ env.REGISTRY }}/handbrake-custom-build:${{ github.event.inputs.flavor }}"
+          tags: "${{ env.REGISTRY }}/${{ github.repository_owner }}/handbrake-custom-build:${{ github.event.inputs.flavor }}"
