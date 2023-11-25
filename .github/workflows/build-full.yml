@@ -10,6 +10,7 @@ on:
   create:
     tags:
       - '*'
+
 jobs:
   build:
     name: Build packages
@@ -17,10 +18,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os-version: ["bookworm", "bullseye", "jammy"]
+        os-version: ["bookworm", "bullseye", "jammy", "focal"]
     container:
-      image: "smeinecke/handbrake-custom-build:${{ matrix.os-version }}"
+      image: "ghcr.io/${{ github.repository_owner }}/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -71,6 +75,7 @@ jobs:
             bookworm
             bullseye
             jammy
+            focal
           file: |
             handbrake_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
             handbrake-cli_${{ github.event.inputs.hb_tag  }}~bullseye_amd64.deb
@@ -86,6 +91,7 @@ jobs:
             bookworm
             bullseye
             jammy
+            focal
           file: |
             handbrake_${{ github.event.inputs.hb_tag  }}~bookworm_amd64.deb
             handbrake-cli_${{ github.event.inputs.hb_tag  }}~bookworm_amd64.deb
@@ -101,9 +107,26 @@ jobs:
             bookworm
             bullseye
             jammy
+            focal
           file: |
             handbrake_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
             handbrake-cli_${{ github.event.inputs.hb_tag  }}~jammy_amd64.deb
           file_target_version: jammy
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+      - name: Add focal release
+        uses: smeinecke/apt-repo-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            bookworm
+            bullseye
+            jammy
+            focal
+          file: |
+            handbrake_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
+            handbrake-cli_${{ github.event.inputs.hb_tag  }}~focal_amd64.deb
+          file_target_version: focal
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
