@@ -38,8 +38,6 @@ fi
 
 set -e
 
-DEBIAN_FRONTEND=noninteractive apt-get -yq install curl jq
-
 remote_current_release=$(curl -sL https://api.github.com/repos/$1/releases/latest | jq -r ".tag_name")
 remote_current_release="${remote_current_release/Release\//}"
 echo "name=remote_current_release::${remote_current_release}" >> $GITHUB_OUTPUT
