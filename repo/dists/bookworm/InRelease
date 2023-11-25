@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Codename: bookworm
+Date: Sat, 25 Nov 2023 17:44:20 UTC
+Architectures: amd64
+Components: main
+Description: smeinecke/handbrake-deb
+MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-amd64/Packages
+ 7029066c27ac6f5ef18d660d5741979a 20 main/binary-amd64/Packages.gz
+ bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
+SHA1:
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-amd64/Packages
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-amd64/Packages.gz
+ 1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
+SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-amd64/Packages
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-amd64/Packages.gz
+ 81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmViMnQACgkQ27YSoHgZ
+aa1a1A//VMIIqSfA9YwEPCJlq6E5b9uZ1KH7DgXKeE+Jy3Cidq1BivWuTkKjBEh7
+ZSwb4XfGNVQRzOw6/hx2UPARPo1Q2Nve2+s2HixIiNHQXJpS3VawAYLRQm5usrJP
+GEgaE9U+gxYAlrXlpzAJodPsAiai1BO7Mr6760/CYWp2loEKYtzfZ/x3tVzeMatT
+JjogGfkZ092ka/cuN4joInh+zIa6LrwHpI+OKsggwZr8gjcWeZUNG90C4lLsyhnR
+YMuNb02Qjeb0l9hp6YwJZl8O4ZfK39C/FRhM1t6U29L7vPYa4nItL0DboJlHUJi1
+C2EXaWy+9btRb/I+5u88+seI711fSx0bTxM5l2cw88HnRUcuL2AcrpMBDPiPgsr7
+yOPC6UsBsXZs4oFduAu/YYZKfDvcX+XuKfdL5nGeYCr5wzXjaXbDEIPkuQVb7EFS
+iBHg9t/80q7HQJzTS0bZQXcwh7Qa3ucU4280HX7B3SboFGw2BabeEJw8SMuMdo6d
+fTm3UfQxIC03FzgXMUydhCdvsJ3KPgZKx41ASBbYV5csXic9DLdiWP2uuEs9gvGq
+nCzQyF/sqVg00/CbKE2+/L6tqB25B16zIrExEJQoHgkyVebSmqAWTpNN1xi73Upn
+uHxIyab+bGvO09timmkR37xJq3NkPkbLvV0/EowdFkLR5xNqWG0=
+=CCMz
+-----END PGP SIGNATURE-----
