@@ -3,6 +3,7 @@
 include /usr/share/dpkg/architecture.mk
 
 export DEB_LDFLAGS_MAINT_APPEND=-Wl,-z,defs
+export DEB_BUILD_MAINT_OPTIONS := hardening=+all optimize=-lto
 
 # enable qsv on amd64
 ifeq (,$(filter-out amd64,$(DEB_HOST_ARCH)))
@@ -13,9 +14,12 @@ endif
 
 # enable nvenc on amd64 arm64 i386
 ifeq (,$(filter-out amd64 arm64 i386,$(DEB_HOST_ARCH)))
-confflags += --enable-nvenc --enable-nvdec --enable-numa
+confflags += --enable-nvenc \
+			 --enable-nvdec \
+			 --enable-numa
 else
-confflags += --disable-nvenc --disable-nvdec
+confflags += --disable-nvenc \
+			 --disable-nvdec
 endif
 
 %:

@@ -8,8 +8,9 @@ Uploaders:
 Homepage: https://handbrake.fr/
 Vcs-Git: https://github.com/HandBrake/HandBrake.git
 Vcs-Browser: https://github.com/HandBrake/HandBrake
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Build-Depends:
+ autoconf,
  automake,
  cmake,
  debhelper-compat (= 13),
@@ -52,7 +53,8 @@ Build-Depends:
  libxml2-dev,
  nasm,
  python3,
- yasm
+ yasm,
+ cargo
 Rules-Requires-Root: no
 
 Package: handbrake

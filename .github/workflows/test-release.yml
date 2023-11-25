@@ -7,7 +7,7 @@ on:
     inputs:
       hb_tag:
         description: 'HandBrake Version Tag'
-        default: '1.6.1'
+        default: '1.7.1'
         required: true
 jobs:
   build:
