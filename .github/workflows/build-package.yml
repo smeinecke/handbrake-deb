@@ -50,7 +50,7 @@ jobs:
           DEB_FLAVOR: "${{ github.event.inputs.flavor }}"
           HB_TAG: "${{ github.event.inputs.hb_tag }}"
       - name: Upload deb files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: packages
           path: ./*.deb
