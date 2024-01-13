@@ -2,7 +2,7 @@
 Hash: SHA512
 
 Codename: jammy
-Date: Sat, 13 Jan 2024 23:44:01 UTC
+Date: Sat, 13 Jan 2024 23:45:27 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
@@ -20,17 +20,17 @@ SHA256:
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmWjIEEACgkQ27YSoHgZ
-aa1btQ/+ItyxNB1NIDJWFgPfxPydpxjr7yQPWCllDKr3+nNsBXaV0rBcgGMVFSJl
-51dh+XJzDUaqEUhQI+mHwD+v2AwxtYwsUPKqa/ZVHpBFdVf1Fdni3L3IqxvTRZMO
-eI+7bgUiwk7WKYwTEuOphIthrZG9GlcChQrPS+oj+efxvoKLis8qcpIDTbKGY4Jw
-7IulgDjWdfSHNjdYTtxguKY0GyCAiZEHXqDGYsmcEpvDQ9Os7qq6P71U8EyA5Wb/
-CbCU/oDDsoLqXKCKC7bn1c7vtcidDSkCX9IoXgxnrA0r5IuskkyEtPu21OsX+ErN
-24sA33xpdQFd8KebsbhyIdoZxHQUjCKPxEQI/Kaf7yUYL3Nd4C5tdhZpRdijq47l
-QecvPUm/wklLhaosyjecmsM2TK+czdyiLzmW8bRDgF8W573FPiJ5C2WFsPOAOuqu
-qrsgCLsMtnd9Ng4XR2MRfPlsDAWOFYWNy4QiCfu+pdpPgu27E+TMzQC/+5ZBLKH/
-T/TAFPN/EVBHafMur6XdgNS/GNo+E0UuHbjFADnY7LsCnAviopn9lisTvo+Pq83J
-uueLMEsAvrllx46y7j1CUEd91pJgWA//Ja50rFai91wxaUJRw+0shMSy9lC9lXkV
-ASMUXxxKrwE4Dx6cLDe1T5LgBdjDTtivjJBtMOnNTzsuz5BUmzY=
-=EDvy
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmWjIJcACgkQ27YSoHgZ
+aa3tuxAAiAkmoi0uZJ4aBHtHbC//gqbsYSzpmAmzVo0AhSsyWuXyB4F0Nn1jl1hm
+6Kg/o//cQueO1g8u8AAfvF/GxU34Q0PW/K/QsyksZP0avDoUS6t/O75lUML6Qc2U
+TzkPbR4DX/JQOlfnhJqZh+yrmvB6Q3nfEXBHq5De5S1p/5fUdLyONFpvHOgq7CO3
+z1g9+Olkgl641z6NcU3FqyFkwCmD89vDU3HcoXdPJpEQO1som7BHsDi89wLhlHLS
+OZY1dmFmK2esg08aQjmrmGtZm+QcY8hwec9zfunLlO4S8NYa+TKrNcwtnm61jADQ
+iPfQ0Wc/8VL20XsupsA2Xfuu8eKrrpzPiOcjMW90Ntan5ep/slZSMv2FgHSboazc
+tZ2O4grc6GzzmPMnEUv6aPaFxcIUEZUlDNJHNZrFYKDbuXMug2aJiuOZLQKcrBi7
+CVAcyfbO/MjJHXqwJIBpWrm3sYABMsSycejpDvQn8muJVAZfq1ITJJyTUX2CZ8Xn
+ZE9xTezIx+R3at03JT8NxBfrS3hmFsEJhjaGqe4Lr9ae+MvuRkoASXv2nlzA/E1a
+sq/+V10H9H9TmCkfYYgFE3tDNkfunMHtGCCRb3zVUsmpZ3cY5qMReTpy9gKFJPAr
+9sKw7/yA1D3jFtm7AbA6OCjJt9S/fFifN/hGKA9Xld1coIVwlC0=
+=cgA8
 -----END PGP SIGNATURE-----

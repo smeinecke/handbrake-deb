@@ -2,7 +2,7 @@
 Hash: SHA512
 
 Codename: mantic
-Date: Sat, 13 Jan 2024 23:44:01 UTC
+Date: Sat, 13 Jan 2024 23:45:27 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
@@ -20,17 +20,17 @@ SHA256:
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmWjIEEACgkQ27YSoHgZ
-aa1AiBAAoQs9IXbDQOEUy7S35dZ2xxq4Loyu4/rlN6g7txAQcP5KlUWjCUnwvdOE
-kAMBXq44abKFUQwflRUxdvB8IfYwInv8HRR+U51iD7ONKc+cNUJCh4HdgHfHHHyu
-UBqlL2piahBF6TzxELlx3EpaKPmvipxeSQ5toPkMhJLpEcvv6UG8kZU0Ndxf10p2
-8urwdq1wkM1//Ofgcc3DlXSPS+/lErBK8f+l1ibLuQuR0RQ1dUehsqDnUkLxY9HQ
-zczIF/p3bWfVwhOyBs5cFV1O2+mQhW0L78KCxXSB2iEkih/jx5PADIS78TOZ6yUR
-TlFyZEyEMu9CBumf7DITLqUyhQ4yxk2euWqo7sX+43tv2wynrCKlW37OlJzgve7v
-9Whs5S0u/Uh55V10DsaSxA+LYiDwV7ozVoEbVMuVSNWI217I7voXUN6KeAUs8K3P
-AvOCbrsIaI0VOcfXSIZXq7sg8iEHSeGEukPfw8ZLpWgs/mVGO0TWaZEqFQ4/I2d1
-6lNxhpl7ChxbEFwmdd7pf65rMqg0cAHWnMnnRoi/yREWWaaLrlFyte63z9x8SwkD
-6j4e14joH9gmlIdzCusk/JfodmmGBLVnFo2ksWALoX/rD1nKJjc90fFOzOhrVFCy
-u8P//089hU118an+HUeix2egSyrrozVMXTfDLy87xD/Jrrvt5TU=
-=E+99
+iQIyBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmWjIJcACgkQ27YSoHgZ
+aa3VWg/2L9jyTbVRppMMyAjDNLh2a7kUWj7MPY7db2Bgr3XPb3Tu3v3XcwRuhbv7
+9ZeBUoDyG5sf/lynkzWTLELoUN9+lA9EYtOZN5KxZX/ZObeym+9BxJh3KtpZaFyh
++9KohlzRhuerE4vsjbuA1s+aEqy7I853KhOH19kbCO6t9168c0Twz/viW6m+lY2N
+Tq3OK2CltTs7zAa1az8adLVHurjNgzT63MDlhBeOap8aB/6sAjUIxjDXVfs6PpAA
+Z2u9TovGmTTexZSTvdYfWRclNpG+ZjgZcP+4tqWk3OL+DvsGlIBIhr+kIrPWRmBc
+srr0hBmhFvGMMnmGeKI9tgd053TmreH3aPTNutKvK4PDKpjszJb9QtznTTiVp8xU
+DFIv7OZSEnjBd/jPzbPxDdnUcIwQaPQjQCMs/e7arGqfIRF31CSvPMaq/QyM4Vnj
+ufsxEa7rzTzTuqTtNyVMruucetWLK4jx54V/Y9aneD+rxfRmNtkk2a7MoRAiXf5B
+FRV/j2bjRLKspprBSC4nEFOd57VAcmU78MH5Y9dr31OeoPwpSuED8U3IYs4gyg9+
+eivvfpAxnlvrLQMmY3L9zDDmWoyEG5negJlB89ZALbKIeTOeWclgJJUVTlvLHjrt
+EddwELBXjwQtGBJ0HexSU7j6pVsTS3k5RYNAO5ltVudE7dKc/g==
+=Bip0
 -----END PGP SIGNATURE-----
