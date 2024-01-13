@@ -3,7 +3,10 @@ Custom Handbrake build container and debian repository for handbrake.
 
 ## Supports:
  * bullseye
+ * bookworm
+ * focal
  * jammy
+ * mantic
 
 
 ## Add Repo:
