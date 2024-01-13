@@ -5,7 +5,7 @@ on:
     inputs:
       hb_tag:
         description: 'Version Tag'
-        default: '1.7.1'
+        default: '1.7.2'
         required: true
   create:
     tags:
@@ -50,7 +50,7 @@ jobs:
         env:
           DEB_FLAVOR: "${{ matrix.os-version }}"
       - name: Upload deb files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: packages
           path: ./*.deb
