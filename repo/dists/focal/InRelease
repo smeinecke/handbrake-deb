@@ -2,7 +2,7 @@
 Hash: SHA512
 
 Codename: focal
-Date: Thu, 28 Nov 2024 03:20:46 UTC
+Date: Thu, 28 Nov 2024 03:22:37 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
@@ -20,17 +20,17 @@ SHA256:
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmdH4Y4ACgkQ27YSoHgZ
-aa22xw//XbaXYpSowRG6Y0Dz1Y547ZoetWIEqZkhnw1Mwg43fQJxGTraErpMi61u
-TcmsPvDRizGkVlUgnu5I7qzPwYP/SBnJVeQOjz6vENJPcvvRTLu5YaRWFdC3adfk
-I5oMhEHo2ZUinIXyCJ5Bb8YEzrfsKyRXq4/AvlxUXioOBwYlsyWMLbJCInDasiM5
-kc7UVgSvuZheqaGoxQdJccnnBfO5B8YGArhHiOnKVZVP/lbDlNWM6cKnerRQ3lsv
-nDZoeVH2+5pwOzgBSzzOCvEh/1gtm24QvW8tZnn1aAjfX+86+kTNZBfPWdOOyp69
-6hxEjYZznP2H9sPWEklobRglPmaD7eCL2o7mCQGeprNdbJ4g23ogeiw/TLVT+RlN
-oFCLRCE2R0xkl+IPo1zCaRPaHaw/iGp10EtExZkLMgPoVy4YDmhGLN3ywSNXidlv
-12fAa1itFAn0ci1n8qzUEac0dl04aCbKlCFGrC4trkH70gcAdtmwgrj+fqviq36+
-mMaIPIQtVCGhFKnr/3bfoyg3uZkQrWgxLrPz0Kqff2QKpxt3el+AVDKa7EAYj7vz
-/j1nWVgZU3tK+XtryG5FUHHG04ZDjT3yeqiOJiiIdLlBZU0MzhYXkUoaiMN4CHwI
-ZFg0o6ra+LtjznjjfZmtaJFWjtZrfU9+iBBA+Zb1i1tCs1xAmPo=
-=JqI9
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmdH4f0ACgkQ27YSoHgZ
+aa2inw//SLlEMbpMLAVEZcpozHwtDL3Z4aPs/VqbArKhTz46rcglG4dc1lBOCaxZ
+Y7CSqrcEsCDKxp7WSo0br80J7fLd10KqK0KFa7jzxTW2Zt/32ycV9kpE/Gel2nMe
+xupnVn1REqbBDfFaqZIeRE0mSWjAUkeM/acKytGQMaijBn0HD3cGNXz1JQpw5/co
++QOAu4Mc6WtBAZn2BMDB44MQey3q5IZZ9naeVupkeMDqbVvQuKw07QJ+CgVZaFQ7
+k79XP5TlN8yOHBWtMEn5NH/Pmr/12JBz3FKQeXTAc7KLzfFgdnK144exYQ6Q7ev8
+nniYuhPjapeTXufpFKMWcQnwxcuXbIS56uTTVaFzB9x82zfh1y8dRAIdFO1Sefar
+FrqE3qoVOWmelZuLAWwknHYAngYfmU3LSHgSIaqiTASwwr8nICyD7cx8jgrIyUE+
+zhD6CWUSr5p6Q9zF8OdpxfTElBxIUdQMTpKuDvwffHQIoElot8oOJoW3zxmQlU6L
+1iuB9D0xiSARUmbKVHOvSjaUyRDQb73w0XKYnpz34TLLraRGwP5vvK+5QHZLbmkd
+LJrfUENqH9o5hEug5fWZL/+Ep8ryi3xypxiU/6ep2VtsVL0g5vFVkTcjyeDslEo5
+cxOWJBGVlypTBtpfJwjZoFJtIIVpso825FhLzsudsyDtYn8tHeU=
+=XmOi
 -----END PGP SIGNATURE-----
