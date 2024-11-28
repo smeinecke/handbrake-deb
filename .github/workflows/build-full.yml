@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os-version: ["bookworm", "bullseye", "mantic", "jammy", "focal"]
+        os-version: ["bookworm", "bullseye", "noble", "jammy", "focal"]
     container:
       image: "ghcr.io/${{ github.repository_owner }}/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
@@ -85,7 +85,7 @@ jobs:
             bookworm
             focal
             jammy
-            mantic
+            noble
           file: |
             handbrake_${{ env.HB_TAG }}~bullseye_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~bullseye_amd64.deb
@@ -102,7 +102,7 @@ jobs:
             bookworm
             focal
             jammy
-            mantic
+            noble
           file: |
             handbrake_${{ env.HB_TAG }}~bookworm_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~bookworm_amd64.deb
@@ -119,7 +119,7 @@ jobs:
             bookworm
             focal
             jammy
-            mantic
+            noble
           file: |
             handbrake_${{ env.HB_TAG }}~jammy_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~jammy_amd64.deb
@@ -136,14 +136,14 @@ jobs:
             bookworm
             focal
             jammy
-            mantic
+            noble
           file: |
             handbrake_${{ env.HB_TAG }}~focal_amd64.deb
             handbrake-cli_${{ env.HB_TAG }}~focal_amd64.deb
           file_target_version: focal
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
-      - name: Add release (mantic)
+      - name: Add release (noble)
         uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -153,10 +153,10 @@ jobs:
             bookworm
             focal
             jammy
-            mantic
+            noble
           file: |
-            handbrake_${{ env.HB_TAG }}~mantic_amd64.deb
-            handbrake-cli_${{ env.HB_TAG }}~mantic_amd64.deb
-          file_target_version: mantic
+            handbrake_${{ env.HB_TAG }}~noble_amd64.deb
+            handbrake-cli_${{ env.HB_TAG }}~noble_amd64.deb
+          file_target_version: noble
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""

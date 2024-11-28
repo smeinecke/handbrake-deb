@@ -6,7 +6,7 @@ Custom Handbrake build container and debian repository for handbrake.
  * bookworm
  * focal
  * jammy
- * mantic
+ * noble
 
 
 ## Add Repo:

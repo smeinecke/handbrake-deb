@@ -30,10 +30,10 @@ jobs:
         run: >
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb && \
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb
-      - name: Download release mantic
+      - name: Download release noble
         run: >
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.mantic_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.mantic_amd64.deb
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.noble_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.noble_amd64.deb
       - name: Download release bullseye
         run: >
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb && \
@@ -52,7 +52,7 @@ jobs:
             bullseye
             focal
             jammy
-            mantic
+            noble
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
@@ -70,7 +70,7 @@ jobs:
             bullseye
             focal
             jammy
-            mantic
+            noble
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
@@ -78,7 +78,7 @@ jobs:
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
-      - name: Github pages APT repo (mantic)
+      - name: Github pages APT repo (noble)
         uses: smeinecke/apt-repo-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
@@ -88,11 +88,11 @@ jobs:
             bullseye
             focal
             jammy
-            mantic
+            noble
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.mantic_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.mantic_amd64.deb"
-          file_target_version: mantic
+            "handbrake_${{ github.event.inputs.hb_tag }}.noble_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}.noble_amd64.deb"
+          file_target_version: noble
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
@@ -106,7 +106,7 @@ jobs:
             bullseye
             focal
             jammy
-            mantic
+            noble
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
@@ -124,7 +124,7 @@ jobs:
             bullseye
             focal
             jammy
-            mantic
+            noble
           file: |
             "handbrake_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"

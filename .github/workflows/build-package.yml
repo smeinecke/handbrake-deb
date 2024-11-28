@@ -9,7 +9,7 @@ on:
         type: choice
         description: 'Debian/Ubuntu Version'
         options:
-          - 'mantic'
+          - 'noble'
           - 'jammy'
           - 'focal'
           - 'bullseye'
@@ -70,7 +70,7 @@ jobs:
             bullseye
             focal
             jammy
-            mantic
+            noble
           file: |
             handbrake_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
             handbrake-cli_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb

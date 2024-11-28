@@ -25,12 +25,7 @@ RUN set -e \
     && wget --no-check-certificate -O /cmake-3.16.3-Linux-x86_64.tar.gz https://github.com/HandBrake/HandBrake-toolchains/releases/download/1.0/cmake-3.16.3-Linux-x86_64.tar.gz \
     && tar -C /deps -xvf /cmake-3.16.3-Linux-x86_64.tar.gz
 
-# gtk stuff
-RUN set -e \
-    && apt-get update \
-    && apt-get -y install gstreamer1.0-libav intltool libappindicator-dev libdbus-glib-1-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk-4-dev libgudev-1.0-dev libnotify-dev libwebkit2gtk-4.0-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /tmp/* /var/tmp/* /var/log/*
+# gtk stuff removed (gtk4 not supported in focal)
 
 # Get Rust
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y

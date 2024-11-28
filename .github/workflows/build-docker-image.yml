@@ -10,7 +10,7 @@ on:
         options:
           - 'focal'
           - 'jammy'
-          - 'mantic'
+          - 'noble'
           - 'bullseye'
           - 'bookworm'
         required: true
