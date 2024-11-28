@@ -2,7 +2,7 @@
 Hash: SHA512
 
 Codename: bookworm
-Date: Thu, 28 Nov 2024 03:25:30 UTC
+Date: Thu, 28 Nov 2024 03:28:00 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
@@ -20,17 +20,17 @@ SHA256:
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmdH4qoACgkQ27YSoHgZ
-aa1mCg//ehwsT5U5CeyB8vkLvMxgZGZXlkdmnMdC8jRS6vq5X1NJzb5Y20NbYla8
-h12lq4fC334kjrHbwo5X8BTKG3j40qHZOw20kAKw1j1ooE2V/L0oKdzMwOJjXcq9
-V2Mo3Y+o/QcK5DxA/hRve28PvLKabxQFzv9uDqyICNXlgDpaNKlSteGiQGSIzhNH
-tvItVvECR6/01eR6AXutN2bJV71kp7knt+m/LkQaAfjLG6Aufa/+TkBScPFQg5xB
-GTLP9EJK916L7QbyD+1wegGyCEjLH0UKUXqvT44pU+KNaxP8CNuFlUeHPwVCGCej
-/+HSy5hCN7suhzKB7qxGv0o+llN6s8uRxsMa5Yek/x8s5GMp01PWfEmw0nDKmUIB
-rMpBPrDDCpNqdHpkcqKBDm8e2OmsH7pfPzeulepvFEsdGnRWqzCO9v4vGeij611b
-pdUDTJsQn/SrnGOQJE2IecOFFzO8vD2oOe8OM3i7JmImh4peU/dXFzqcN0qrumYt
-iFiJ3ctjBdoRpC1ya3KU+Za4CIRt3GzEN6qkqGQPo4zrbwhM6NGfjJZ9iXQmFcuu
-Q5obcnPbuNaEvj20BG61zzDbOITlcKuIX8C+nsOivFzwqcw0ua7EcylOlFxLPaX/
-gGNrBq5wusaEDp/o8xPqBermge95wOrZuM7D/88cBya9JJvKi+w=
-=NS5F
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmdH40AACgkQ27YSoHgZ
+aa3NbQ//UArHwYD6wOBNMYPVQjFhfvMqPKMs1Rr9RJbL8XXFkOK6KZfqrqhP7d1A
+uDrjL3HpufdNVz2oGnbIooVJI4CV639oifLDjnAeDKAGqbtHNOJvC6+OqPWNzMI5
+u2USBdGXW/2IyTev0Mux0cdTwNaTs+Cac2dAEWIlnuEj46Yzr4oB7uzk2R10hlyw
+z8OF6KcpnAshs8j1IJly1mOJ2msWvsDe+S54UXjBv+7XDQfk4jTWRCZ+RjAegBKa
+sjbURDdfK1jF1YW2QzTKPvP1mmhtpePGJ1wZCW3lrLu4H2HrprR1HthaBIBw1iuG
+8AfH6mcq14th73YfIHZAVJKq39Luqw++YZBHwMbF+5hf1rLdtTVcS0CCKCvLYqZj
+qupizDMJtOj4FudRWpwdlVXL7yI7b7n69LiijA8HyLaNg+4n/Zr7SrzbaRWFXQvo
+SGwidMAvqO6Nat2YmT8p9ihR87i11XQ2XTe+GwJ0w7EuQeJGy8EWyK3g/eJqPas2
+cuEX+yjon52z8mwSmepazaL9fuohgKaxVox7qERktLWcGKVPrR2gx20/vABXr3CG
+3DlxotD3eESRwlhEnwuoDZceAfqKyp6DYN4uHenJeyBQq1ppoBiP+pMRejiHkHzr
+OrQ/ubnv4LuUWrOQ4E7757Xqev3EKjM1f84xtrrdo3hoeudij2U=
+=Cm3y
 -----END PGP SIGNATURE-----
