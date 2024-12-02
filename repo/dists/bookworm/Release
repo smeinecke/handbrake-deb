@@ -1,17 +1,17 @@
 Codename: bookworm
-Date: Mon, 02 Dec 2024 16:33:05 UTC
+Date: Mon, 02 Dec 2024 16:33:59 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
 MD5Sum:
- d0a85486c965251977a241cd0fb84a10 2961 main/binary-amd64/Packages
- c0524ad4f90b921613e0592c6966180d 1085 main/binary-amd64/Packages.gz
+ 06048516deecc1c8623cbfd9df47843a 2961 main/binary-amd64/Packages
+ d2015a2f978d6d37e14abc6bd4b14705 1082 main/binary-amd64/Packages.gz
  bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
 SHA1:
- 324ddf7dc26cd686ca90bbb9e3e17aa2944dac8a 2961 main/binary-amd64/Packages
- 107f83541ff5cdc1f2e172078d1b416034078687 1085 main/binary-amd64/Packages.gz
+ a6814589de04044207118b35b3ac7fdf5802f40e 2961 main/binary-amd64/Packages
+ 17963c943d1abb2fe2baf6f32abf6959c935f08b 1082 main/binary-amd64/Packages.gz
  1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
 SHA256:
- 43a8b4c036e2c4db2d459f1b2dd3cfe7d48288cbd324f8ce88bc92d171447e04 2961 main/binary-amd64/Packages
- b29f1e3a41cd01a448fdf45662edad8ab4abe4b530071e953e82ffbfec6368a9 1085 main/binary-amd64/Packages.gz
+ 3cb4843f2d082a6da44377bea7961e855a057a9cdbe462098f7b9942f6535da7 2961 main/binary-amd64/Packages
+ 62a7dfa69942dcf22b77418e6a41e87397a3637639c21eb36555f996300b3231 1082 main/binary-amd64/Packages.gz
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
