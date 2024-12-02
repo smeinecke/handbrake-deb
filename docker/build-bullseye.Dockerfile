@@ -15,6 +15,7 @@ RUN set -e \
         libtheora-dev libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev m4 make meson nasm ninja-build patch pkg-config \
         python3 python-is-python3 tar zlib1g-dev libmp3lame-dev libnuma-dev libopus-dev libspeex-dev libvpx-dev libva-dev libdrm-dev libxml2-dev \
         libjansson-dev git debhelper-compat yasm coreutils distcc ccache wget libmfx-dev clang curl \
+        ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
