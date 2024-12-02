@@ -32,6 +32,6 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
 # set default
-RUN source "$HOME/.cargo/env" && cargo install cargo-c && rustup default stable
+RUN cargo install cargo-c && rustup default stable
 
 ENTRYPOINT echo hello && sleep infinity
