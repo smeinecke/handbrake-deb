@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: "packages-${{ env.HB_TAG }}-${{ matrix.os-version }}"
-          path: ./debian/artifacts/*
+          path: ./*.deb
 
   merge-artefacts:
     name: Merge all deb files to single artifact
