@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -x
 
 if [[ -z "${HB_TAG}" ]]; then
     echo "Parameter HB_TAG missing!"
@@ -93,6 +94,6 @@ cp -vr ${SCRIPTDIR}/${DEB_FLAVOR} debian
 ) > debian/changelog
 
 
-DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -d -us -b -rfakeroot
+DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -j1 -d -us -b -rfakeroot
 cd ..
 rm -vf *dbgsym*.deb
