@@ -49,6 +49,13 @@ jobs:
         env:
           DEB_FLAVOR: "${{ github.event.inputs.flavor }}"
           HB_TAG: "${{ github.event.inputs.hb_tag }}"
+      - name: Cache build
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: |
+            cache
+          key: "${{ github.event.inputs.flavor }}-build-cache-${{ github.event.inputs.hb_tag }}"
       - name: Upload deb files
         uses: actions/upload-artifact@v4
         with:
