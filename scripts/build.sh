@@ -93,6 +93,6 @@ cp -vr ${SCRIPTDIR}/${DEB_FLAVOR} debian
 ) > debian/changelog
 
 
-DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b -rfakeroot
+DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -d -us -b -rfakeroot
 cd ..
 rm -vf *dbgsym*.deb
