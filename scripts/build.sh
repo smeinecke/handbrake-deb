@@ -17,9 +17,10 @@ SCRIPTDIR=$(dirname "${SCRIPT}")
 WORKDIR="${PWD}"
 
 git config --global advice.detachedHead false
+mkdir -p "/root/.bin"
 
 # Enable ccache
-export PATH="/root/.cargo/bin:/usr/lib/ccache:${PATH}"
+export PATH="/root/.bin:/root/.cargo/bin:/usr/lib/ccache:${PATH}"
 export CCACHE_DIR="${WORKDIR}/cache/ccache"
 
 # Checkout handbreak
@@ -52,6 +53,9 @@ cmake --version | head -n 1
 chmod  +x configure
 
 source "/root/.cargo/env"
+
+# update rust
+rustup update
 
 # configure default stable.
 rustup default stable

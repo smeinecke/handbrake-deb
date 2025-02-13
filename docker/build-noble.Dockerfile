@@ -34,9 +34,12 @@ RUN set -e \
 
 # Get Rust
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
-ENV PATH="/root/.cargo/bin:${PATH}"
+ENV PATH="/root/.bin/:/root/.cargo/bin:${PATH}"
 
 # set default
 RUN cargo install cargo-c && rustup default stable
+
+RUN mkdir -p "/root/.bin"
+ADD bin/cargo-wrapper /root/.bin/cargo
 
 ENTRYPOINT echo hello && sleep infinity
