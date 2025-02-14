@@ -40,7 +40,8 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 RUN cargo install cargo-c && rustup default stable
 
 ADD bin/cargo-wrapper /root/.cargo/bin/cargo-wrapper
-RUN mv /root/.cargo/bin/cargo /root/.cargo/bin/cargo-orig && \
+RUN mkdir -p /root/.cargo/bin/orig && \
+    mv /root/.cargo/bin/cargo /root/.cargo/bin/orig/cargo && \
     chmod +x /root/.cargo/bin/cargo-wrapper && \
     ln -s /root/.cargo/bin/cargo-wrapper /root/.cargo/bin/cargo
 

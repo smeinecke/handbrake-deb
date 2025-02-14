@@ -1,4 +1,4 @@
 #!/bin/bash
 rustup default stable
 
-exec /root/.cargo/bin/cargo-orig "$@"
+exec /root/.cargo/bin/orig/cargo "$@"
