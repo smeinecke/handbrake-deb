@@ -54,9 +54,6 @@ chmod  +x configure
 
 source "/root/.cargo/env"
 
-# update rust
-rustup update
-
 # configure default stable.
 rustup default stable
 
