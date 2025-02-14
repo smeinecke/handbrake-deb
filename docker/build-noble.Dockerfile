@@ -39,7 +39,9 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # set default
 RUN cargo install cargo-c && rustup default stable
 
-RUN mv /root/.cargo/bin/cargo /root/.cargo/bin/cargo-orig
-ADD bin/cargo-wrapper /root/.cargo/bin/cargo
+ADD bin/cargo-wrapper /root/.cargo/bin/cargo-wrapper
+RUN mv /root/.cargo/bin/cargo /root/.cargo/bin/cargo-orig && \
+    chmod +x /root/.cargo/bin/cargo-wrapper && \
+    ln -s /root/.cargo/bin/cargo-wrapper /root/.cargo/bin/cargo
 
 ENTRYPOINT echo hello && sleep infinity
