@@ -30,6 +30,13 @@ RUN set -e \
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
+# set default
 RUN cargo install cargo-c && rustup default stable
+
+ADD bin/cargo-wrapper /root/.cargo/bin/cargo-wrapper
+RUN mkdir -p /root/.cargo/bin/orig && \
+    mv /root/.cargo/bin/cargo /root/.cargo/bin/orig/cargo && \
+    chmod +x /root/.cargo/bin/cargo-wrapper && \
+    ln -s /root/.cargo/bin/cargo-wrapper /root/.cargo/bin/cargo
 
 ENTRYPOINT echo hello && sleep infinity

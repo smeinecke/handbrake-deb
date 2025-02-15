@@ -17,6 +17,7 @@ SCRIPTDIR=$(dirname "${SCRIPT}")
 WORKDIR="${PWD}"
 
 git config --global advice.detachedHead false
+mkdir -p "/root/.bin"
 
 # Enable ccache
 export PATH="/root/.cargo/bin:/usr/lib/ccache:${PATH}"
@@ -94,6 +95,6 @@ cp -vr ${SCRIPTDIR}/${DEB_FLAVOR} debian
 ) > debian/changelog
 
 
-DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -j1 -d -us -b -rfakeroot
+DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b -rfakeroot
 cd ..
 rm -vf *dbgsym*.deb
