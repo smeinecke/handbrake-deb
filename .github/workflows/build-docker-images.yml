@@ -14,11 +14,12 @@ jobs:
       fail-fast: false
       matrix:
         os-version:
-          - 'focal'
-          - 'jammy'
-          - 'noble'
-          - 'bullseye'
+          - 'trixie'
           - 'bookworm'
+          - 'bullseye'
+          - 'noble'
+          - 'jammy'
+          - 'focal'
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3

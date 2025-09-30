@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os-version: ["bookworm", "bullseye", "noble", "jammy", "focal"]
+        os-version: ["trixie", "bookworm", "bullseye", "noble", "jammy", "focal"]
     container:
       image: "ghcr.io/${{ github.repository_owner }}/handbrake-custom-build:${{ matrix.os-version }}"
       options: --privileged --device /dev/fuse
