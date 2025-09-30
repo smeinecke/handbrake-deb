@@ -22,7 +22,7 @@ RUN set -e \
 # gtk stuff
 RUN set -e \
     && apt-get update \
-    && apt-get -y install intltool libdbus-glib-1-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk-4-dev libgudev-1.0-dev libnotify-dev libwebkit2gtk-4.0-dev \
+    && apt-get -y install intltool libdbus-glib-1-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk-4-dev libgudev-1.0-dev libnotify-dev libwebkitgtk-6.0-dev \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
