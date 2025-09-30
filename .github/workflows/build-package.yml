@@ -12,6 +12,7 @@ on:
           - 'noble'
           - 'jammy'
           - 'focal'
+          - 'trixie'
           - 'bullseye'
           - 'bookworm'
         required: true
@@ -73,6 +74,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            trixie
             bookworm
             bullseye
             focal
