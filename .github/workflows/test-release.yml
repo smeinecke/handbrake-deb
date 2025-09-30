@@ -6,8 +6,8 @@ on:
     # Inputs the workflow accepts.
     inputs:
       hb_tag:
-        description: 'HandBrake Version Tag'
-        default: '1.9.0'
+        description: "HandBrake Version Tag"
+        default: "1.9.0"
         required: true
 jobs:
   build:
@@ -22,6 +22,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+      - name: Download release trixie
+        run: >
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb
       - name: Download release focal
         run: >
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb && \
@@ -48,6 +52,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            trixie
             bookworm
             bullseye
             focal
@@ -66,6 +71,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            trixie
             bookworm
             bullseye
             focal
@@ -84,6 +90,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            trixie
             bookworm
             bullseye
             focal
@@ -102,6 +109,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            trixie
             bookworm
             bullseye
             focal
@@ -120,6 +128,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
           repo_supported_version: |
+            trixie
             bookworm
             bullseye
             focal
@@ -129,6 +138,25 @@ jobs:
             "handbrake_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
             "handbrake-cli_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
           file_target_version: bookworm
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+          debug: 1
+      - name: Github pages APT repo (trixie)
+        uses: smeinecke/apt-repo-action@v2.1.6
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            trixie
+            bookworm
+            bullseye
+            focal
+            jammy
+            noble
+          file: |
+            "handbrake_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb"
+          file_target_version: trixie
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
