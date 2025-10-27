@@ -58,7 +58,7 @@ jobs:
             cache
           key: "${{ github.event.inputs.flavor }}-build-cache-${{ github.event.inputs.hb_tag }}"
       - name: Upload deb files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: packages
           path: ./*.deb
