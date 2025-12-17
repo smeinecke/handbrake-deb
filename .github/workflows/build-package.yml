@@ -24,6 +24,10 @@ on:
         type: boolean
         description: "publish to repository"
 
+permissions:
+  contents: write
+  packages: read
+
 jobs:
   build:
     name: Build
