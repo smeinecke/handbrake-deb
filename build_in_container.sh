@@ -14,7 +14,7 @@ HB_TAG="$1"
 shift
 
 set -x
-docker build -t $DOCKER_IMAGE_NAME -f "docker/build-${DEB_FLAVOR}" docker/
+docker build -t $DOCKER_IMAGE_NAME -f "docker/build-${DEB_FLAVOR}.Dockerfile" docker/
 
 docker create --name $DOCKER_CONTAINER_NAME $DOCKER_IMAGE_NAME
 docker cp scripts $DOCKER_CONTAINER_NAME:/
