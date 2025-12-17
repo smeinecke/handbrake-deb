@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Codename: trixie
+Date: Wed, 17 Dec 2025 20:06:42 UTC
+Architectures: amd64
+Components: main
+Description: smeinecke/handbrake-deb
+MD5Sum:
+ a9100e140e5aa320f89020e9a102b8d9 3016 main/binary-amd64/Packages
+ 305d035a009d8bb4b02628d20aaa2c71 1097 main/binary-amd64/Packages.gz
+ bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
+SHA1:
+ 8337a98d598b1120f2ca022a690a52d25a5a1266 3016 main/binary-amd64/Packages
+ 73a1baae9c0f14ed24d5621e6e8018526da2d41d 1097 main/binary-amd64/Packages.gz
+ 1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
+SHA256:
+ c488e821a80558b69fcd65209229bc570d01ee8cead81513d6eef87df58ad22a 3016 main/binary-amd64/Packages
+ e46e935661d3580223ebf56beb9e47e1b8443c3ce22a0433f46b27ef53b95a4e 1097 main/binary-amd64/Packages.gz
+ 81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEESb7MwvPCo2nPWluR27YSoHgZaa0FAmlDDVIACgkQ27YSoHgZ
+aa25Mg//aEPz/V6tnYiRqlZQrpA4CvgAR31E2WIsvZR1VSuabF3GTjUeW6PH4C9r
+2Ii3KObUERqY6FlAy8Qen9CBaCQLCAppRt+AeyezXjQGL7tGKDK7FTtkJY3Sy2b9
+k5Veyp6qwzsaSKZHVVafZ3PTVAopCu+GAN/1Ecx2dFwTAxXW74ouOV8iACXrYgEh
+2fYGoZyK3SFjnjnBSBXdzg7uTfEU4XGY0W78X0OnNpHhV0jYEOhxEiywb+uofcnp
+B1BAtEVy+BRnhuYOjEPxsDCOiGnQbvoIV1N/itv0f/+96UDQTkQuESy1FS9oxuUL
+zACZ/5IAt27E2IFk/xOVu1za+QZQ72I8+LUqZ3GfyHLKcNJnkOFEPglXKTuTaK5C
+ILwRQQyDXPYGiGxNaYZJMP54peiDF3zwBf6IPutYzZGSVk6akbQd9kU2FOKHeWuC
+LNFAftQycbbo3mQu8BbqxlTA8Gaa+wBDmzXxkrBg9lYiVrCabY6mtncfjmNt3HkT
+rbFBlmddISrjcdcrtciZs73UYDjtbM/BooQTLqar2cbrPMr8sWnXWEZkUPPd3zHE
+oYOYHlWMt+OLE1X8jOlcQRbPcMAoApPkfxaSneUzFWugaSe+2IWX3Gyp+6yG0021
+3pEEV5hIjrrDo49Z1lDuIDevlP71965JbqVqHXv3YBav12Nbx4A=
+=q5LD
+-----END PGP SIGNATURE-----

@@ -1,17 +1,17 @@
 Codename: bullseye
-Date: Sun, 23 Feb 2025 16:32:47 UTC
+Date: Wed, 17 Dec 2025 20:06:42 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
 MD5Sum:
- 9d37968d90f4b127da5f9d60adb39025 2342 main/binary-amd64/Packages
- 892b47776c392f5187fcf6d4938416f0 1024 main/binary-amd64/Packages.gz
+ f7d76c54ae40d52bbcef79b2e6b59a57 2346 main/binary-amd64/Packages
+ c5d049e726da718d293d437315eddc24 1020 main/binary-amd64/Packages.gz
  bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
 SHA1:
- ca4fcd930d0c1cef79c1c2498f3d1231412a3978 2342 main/binary-amd64/Packages
- a8a744049064f0080628c80009d82eb0d271debf 1024 main/binary-amd64/Packages.gz
+ 7d8c8561a78db3069077d7f97c0f803c3070b141 2346 main/binary-amd64/Packages
+ 8beaa1b9fb7b01c52ac40301e4aa9c6a843114df 1020 main/binary-amd64/Packages.gz
  1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
 SHA256:
- 558be0f711a8020ec1422514fd50c7aa266044f99d05b4e9af7e7496e1916717 2342 main/binary-amd64/Packages
- 047baf8645381302b8201952f1c79b20d4f264eb0052162be98d58d09845bca3 1024 main/binary-amd64/Packages.gz
+ 4aff49e541e8f5770f43a93056332deb20e416c9ffe360ee821ea39f2cda7f7a 2346 main/binary-amd64/Packages
+ 1aafa1adaa5c0f6d3e57cde4e899661783f8b54a5ee082969838df044917ae4f 1020 main/binary-amd64/Packages.gz
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release

@@ -1,18 +1,18 @@
 Package: handbrake
-Version: 1.9.2~jammy
+Version: 1.10.2~jammy
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
-Installed-Size: 226133
-Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.35), libdrm2 (>= 2.4.66), libgcc-s1 (>= 4.2), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.71.1), libgtk-4-1 (>= 4.6.0), libjansson4 (>= 2.0.1), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libpango-1.0-0 (>= 1.14.0), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 11), libtheora0 (>= 1.0), libturbojpeg, libva-drm2 (>= 1.1.0), libva2 (>= 2.1.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx7 (>= 1.10.0), libx264-163 (>= 2:0.163.3060+git5db6aa6), libxml2 (>= 2.9.1), zlib1g (>= 1:1.1.4)
+Installed-Size: 225006
+Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.35), libdrm2 (>= 2.4.66), libgcc-s1 (>= 4.2), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.71.1), libgtk-4-1 (>= 4.6.0), libjansson4 (>= 2.0.1), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libpango-1.0-0 (>= 1.37.5), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 11), libtheora0 (>= 1.0), libturbojpeg, libva-drm2 (>= 1.1.0), libva2 (>= 2.1.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx7 (>= 1.10.0), libx264-163 (>= 2:0.163.3060+git5db6aa6), libxml2 (>= 2.9.1), zlib1g (>= 1:1.1.4)
 Recommends: gstreamer1.0-libav, gstreamer1.0-pulseaudio | gstreamer1.0-alsa, gstreamer1.0-x
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake_1.9.2~jammy_amd64.deb
-Size: 60323574
-SHA256: 261ae76ab1ca48f7ef5a2b865ce2c426724f26a400f35eeb2fdcf1596b183d86
-SHA1: 4c4526b92a4e5acb70173102de03b761b1f2ea41
-MD5sum: 53db36f54ee5e6231e137d6f29fd7b99
+Filename: pool/main/h/handbrake/handbrake_1.10.2~jammy_amd64.deb
+Size: 59927158
+SHA256: 8c4323069f169b4abdd2f71648a034c02e43fbce98aee1291a07a363e6ab5600
+SHA1: 1f57d9ca5f3fabcecb435346495ef8478231d180
+MD5sum: 3c660aa463447a435507d9e69bb43790
 Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media. It's particularly useful
@@ -23,19 +23,19 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
 
 Package: handbrake-cli
 Source: handbrake
-Version: 1.9.2~jammy
+Version: 1.10.2~jammy
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
-Installed-Size: 220910
+Installed-Size: 220057
 Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.35), libdrm2 (>= 2.4.66), libgcc-s1 (>= 4.2), libjansson4 (>= 2.0.1), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 11), libtheora0 (>= 1.0), libturbojpeg, libva-drm2 (>= 1.1.0), libva2 (>= 2.1.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx7 (>= 1.10.0), libx264-163 (>= 2:0.163.3060+git5db6aa6), zlib1g (>= 1:1.1.4)
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake-cli_1.9.2~jammy_amd64.deb
-Size: 58455346
-SHA256: 13d5cb052ea91ba3e6c147e05c9c4f81319693901357d7e1043f754787f3cac1
-SHA1: 64fa10171701f61835788f77d6113e9271a4d2db
-MD5sum: 7b1ee26a4cc65a268345692decaa8049
+Filename: pool/main/h/handbrake/handbrake-cli_1.10.2~jammy_amd64.deb
+Size: 58148054
+SHA256: 39104006771da4c6248fdc3562b1f4824c8a85e4adc4af9e89f2661376b3cc32
+SHA1: fe7711be1b773a48ec4f6a077a66a05bee4873db
+MD5sum: 4ad0916121f49bea12e8ec64006d1354
 Description: versatile DVD ripper and video transcoder (command line)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media.  It's particularly useful

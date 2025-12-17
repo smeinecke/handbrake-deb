@@ -1,17 +1,17 @@
 Codename: focal
-Date: Sun, 23 Feb 2025 16:32:47 UTC
+Date: Wed, 17 Dec 2025 20:06:42 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
 MD5Sum:
- 6ed5ca589183ccbd2e76e228b2e9900e 2287 main/binary-amd64/Packages
- 5dc09216f321263ff58dc5c859e72de7 1003 main/binary-amd64/Packages.gz
+ 00af886de95daf75ea280605afce2d89 2291 main/binary-amd64/Packages
+ 9529ba08cf9596e14e421aa6194cc8f8 1002 main/binary-amd64/Packages.gz
  bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
 SHA1:
- e059119941b9533ee49997f044c9da4638b0993f 2287 main/binary-amd64/Packages
- 13ec4962a9122ae5a623ed51993308e35df1d9f9 1003 main/binary-amd64/Packages.gz
+ d5c4e01f190994f35fc8ed4711fe3b6a9a77b8cc 2291 main/binary-amd64/Packages
+ 5d9e5a01e9ab615314fe3033f6e6a055df15581b 1002 main/binary-amd64/Packages.gz
  1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
 SHA256:
- 723153e5098964ba546056c7b3b34cfec1dba36be0449324dcbc02c00b621bf8 2287 main/binary-amd64/Packages
- 86b540da2d2c9b8b51110e1d6b44561836c614e408085333bdb1cca9e7afd781 1003 main/binary-amd64/Packages.gz
+ dec28b33720b721195f73a6a5c1ad69fa979d785e2b20c4ce164454f552c5513 2291 main/binary-amd64/Packages
+ 1120eba3650f3bfe646d403f6c725eda15674ccb99b2ab09424dc2ea99346e1e 1002 main/binary-amd64/Packages.gz
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release

@@ -1,17 +1,17 @@
 Codename: jammy
-Date: Sun, 23 Feb 2025 16:32:47 UTC
+Date: Wed, 17 Dec 2025 20:06:42 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
 MD5Sum:
- a22111aaf5881cc5d788406f7fe6b907 2937 main/binary-amd64/Packages
- f25b872ba7ae16f84dede9dc4ff048f9 1089 main/binary-amd64/Packages.gz
+ b91d89b460f8ad330696465e66a270f5 2941 main/binary-amd64/Packages
+ 60eb189722da92188f190f4f419a715f 1087 main/binary-amd64/Packages.gz
  bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
 SHA1:
- 1187bc920dfc9d0811a280b7a1b951ee0844667c 2937 main/binary-amd64/Packages
- d19b50e77a89dee3a90d27ae4156f8e77f7c130d 1089 main/binary-amd64/Packages.gz
+ e08e0129b9926557cc8456ece5d0c5c66c0f9590 2941 main/binary-amd64/Packages
+ b2c1f06c778cb8c3dfd8cf68caaa7fefe6207938 1087 main/binary-amd64/Packages.gz
  1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
 SHA256:
- 4f497b03d35d4fe429ec4faa70e904e6f233fbb93b22e6ba0c9b530468e2ae84 2937 main/binary-amd64/Packages
- 477db36d5ee1a79b729ddca93a2c908bc12b3a784fb8ff209167f5c70b0ee83e 1089 main/binary-amd64/Packages.gz
+ 3ed8c525a544ddb64ae50a53de1bb03da0853bfb364d9d104480618276405867 2941 main/binary-amd64/Packages
+ b3e44bcf8e28297bc377c48fe5d54a7e8d224bfa49becac3e7d88f39d372ea47 1087 main/binary-amd64/Packages.gz
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release
