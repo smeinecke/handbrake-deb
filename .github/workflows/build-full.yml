@@ -11,6 +11,10 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: write
+  packages: read
+
 env:
   HB_TAG: ${{ github.event.inputs.hb_tag }}
 

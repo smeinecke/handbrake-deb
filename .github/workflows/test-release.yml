@@ -9,6 +9,11 @@ on:
         description: "HandBrake Version Tag"
         default: "1.9.0"
         required: true
+
+permissions:
+  contents: read
+  packages: read
+
 jobs:
   build:
     name: Build

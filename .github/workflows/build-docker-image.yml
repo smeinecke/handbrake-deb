@@ -16,6 +16,10 @@ on:
           - 'bookworm'
         required: true
 
+permissions:
+  contents: read
+  packages: write
+
 env:
   REGISTRY: ghcr.io
 

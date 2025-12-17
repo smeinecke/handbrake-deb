@@ -1,0 +1,70 @@
+Source: handbrake
+Section: graphics
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:
+ Reinhard Tartler <siretart@tauware.de>,
+ Sebastian Ramacher <sramacher@debian.org>
+Homepage: https://handbrake.fr/
+Vcs-Git: https://github.com/HandBrake/HandBrake.git
+Vcs-Browser: https://github.com/HandBrake/HandBrake
+Standards-Version: 4.4.1
+Build-Depends:
+ automake,
+ cmake,
+ debhelper-compat (= 13),
+ intltool,
+ libass-dev,
+ libbz2-dev,
+ libdbus-glib-1-dev,
+ libfontconfig1-dev,
+ libfreetype6-dev,
+ libgstreamer-plugins-base1.0-dev,
+ libgstreamer1.0-dev,
+ libgtk-4-dev,
+ libgudev-1.0-dev [linux-any],
+ libjansson-dev,
+ liblzma-dev,
+ libmp3lame-dev,
+ libogg-dev,
+ libopus-dev,
+ libspeex-dev,
+ libtheora-dev,
+ libvorbis-dev,
+ libvpx-dev,
+ libx264-dev,
+ libxml2-dev,
+ nasm (>= 2.13),
+ python3,
+ yasm (>= 1.2)
+Rules-Requires-Root: no
+
+Package: handbrake
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Recommends:
+ gstreamer1.0-libav,
+ gstreamer1.0-pulseaudio | gstreamer1.0-alsa,
+ gstreamer1.0-x
+Description: versatile DVD ripper and video transcoder (GTK+ GUI)
+ HandBrake is a versatile, easy-to-use tool for converting DVDs and other
+ videos into H.264, XViD, or Ogg formatted media. It's particularly useful
+ for making videos that are compatible with portable video devices such as
+ the Apple iPod/iPhone or Sony PSP.
+ .
+ This package contains the graphical variant, ghb.
+
+Package: handbrake-cli
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: versatile DVD ripper and video transcoder (command line)
+ HandBrake is a versatile, easy-to-use tool for converting DVDs and other
+ videos into H.264, XViD, or Ogg formatted media.  It's particularly useful
+ for making videos that are compatible with portable video devices such as
+ the Apple iPod/iPhone or Sony PSP.
+ .
+ This package contains the command-line variant, HandBrakeCLI.

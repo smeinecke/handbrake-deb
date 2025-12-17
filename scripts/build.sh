@@ -57,6 +57,10 @@ source "/root/.cargo/env"
 # configure default stable.
 rustup default stable
 
+# Prefer toolchain cargo over any wrapper scripts in /root/.cargo/bin
+RUST_TOOLCHAIN_BIN_DIR="$(dirname "$(rustup which cargo)")"
+export PATH="${RUST_TOOLCHAIN_BIN_DIR}:${PATH}"
+
 # if [ "${DEB_FLAVOR}" == "jammy" ]; then
 #   echo "* Workaround as build via normal dpkg-buildpackage does not work on jammy"
 #   echo "* Build manually and use equivs to generate deb package"
