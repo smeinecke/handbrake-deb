@@ -103,8 +103,9 @@ jobs:
           repo_supported_arch: |
             amd64
           repo_supported_version: |
-            bullseye
+            trixie
             bookworm
+            bullseye
             focal
             jammy
             noble
