@@ -1,6 +1,9 @@
 # handbrake-deb
 Custom HandBrake build container and Debian/Ubuntu APT repository.
 
+This build includes support for **fdk-aac**, **numa**, **Intel QSV**, and **NVIDIA NVENC/NVDEC**.
+Note: the normal/stock HandBrake build typically does not include **fdk-aac**, **numa** or **Intel QSV** enabled out of the box.
+
 ## Supported distributions
 - **APT repository**
   - bullseye
