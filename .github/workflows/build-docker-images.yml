@@ -1,20 +1,8 @@
-name: build docker image
+name: build all docker images
 
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      flavor:
-        type: choice
-        description: 'Debian/Ubuntu Version'
-        options:
-          - 'trixie'
-          - 'focal'
-          - 'jammy'
-          - 'noble'
-          - 'bullseye'
-          - 'bookworm'
-        required: true
+
 
 permissions:
   contents: read
@@ -26,6 +14,16 @@ env:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os-version:
+          - 'trixie'
+          - 'bookworm'
+          - 'bullseye'
+          - 'noble'
+          - 'jammy'
+          - 'focal'
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -42,6 +40,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: "{{defaultContext}}:docker"
-          file: "build-${{ github.event.inputs.flavor }}.Dockerfile"
+          file: "build-${{ matrix.os-version }}.Dockerfile"
           push: true
-          tags: "${{ env.REGISTRY }}/${{ github.repository_owner }}/handbrake-custom-build:${{ github.event.inputs.flavor }}"
+          tags: "${{ env.REGISTRY }}/${{ github.repository_owner }}/handbrake-custom-build:${{ matrix.os-version }}"

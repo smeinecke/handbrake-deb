@@ -34,7 +34,6 @@ override_dh_auto_configure:
 		--enable-x265 \
 		--enable-libdovi \
 		--disable-gst \
-		--disable-gtk \
 		--lto=off \
 		$(confflags) \
 		CC="$(CC)" CXX="$(CXX)" \

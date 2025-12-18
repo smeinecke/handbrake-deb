@@ -8,17 +8,20 @@ Uploaders:
 Homepage: https://handbrake.fr/
 Vcs-Git: https://github.com/HandBrake/HandBrake.git
 Vcs-Browser: https://github.com/HandBrake/HandBrake
-Standards-Version: 4.5.0
+Standards-Version: 4.4.1
 Build-Depends:
  automake,
  cmake,
- debhelper-compat (= 12),
+ debhelper-compat (= 13),
  intltool,
  libass-dev,
  libbz2-dev,
  libdbus-glib-1-dev,
  libfontconfig1-dev,
  libfreetype6-dev,
+ libgstreamer-plugins-base1.0-dev,
+ libgstreamer1.0-dev,
+ libgtk-4-dev,
  libgudev-1.0-dev [linux-any],
  libjansson-dev,
  liblzma-dev,
