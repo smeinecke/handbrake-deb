@@ -61,7 +61,7 @@ jobs:
             cache
           key: "${{ matrix.os-version }}-build-cache-${{ env.HB_TAG }}"
       - name: Upload deb files
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: "packages-${{ env.HB_TAG }}-${{ matrix.os-version }}"
           path: ./*.deb
@@ -72,7 +72,7 @@ jobs:
     needs: build
     steps:
       - name: debian-packages
-        uses: actions/upload-artifact/merge@v6
+        uses: actions/upload-artifact/merge@v7
 
   add_release:
     name: Add package to release
