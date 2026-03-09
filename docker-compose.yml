@@ -1,0 +1,36 @@
+services:
+  bullseye:
+    image: handbrake-custom-build:bullseye-local
+    build:
+      context: ./docker
+      dockerfile: build-bullseye.Dockerfile
+
+  focal:
+    image: handbrake-custom-build:focal-local
+    build:
+      context: ./docker
+      dockerfile: build-focal.Dockerfile
+
+  bookworm:
+    image: handbrake-custom-build:bookworm-local
+    build:
+      context: ./docker
+      dockerfile: build-bookworm.Dockerfile
+
+  trixie:
+    image: handbrake-custom-build:trixie-local
+    build:
+      context: ./docker
+      dockerfile: build-trixie.Dockerfile
+
+  jammy:
+    image: handbrake-custom-build:jammy-local
+    build:
+      context: ./docker
+      dockerfile: build-jammy.Dockerfile
+
+  noble:
+    image: handbrake-custom-build:noble-local
+    build:
+      context: ./docker
+      dockerfile: build-noble.Dockerfile

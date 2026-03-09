@@ -15,7 +15,7 @@ RUN set -e \
         libfribidi-dev libharfbuzz-dev libjansson-dev liblzma-dev libmp3lame-dev libnuma-dev libogg-dev libopus-dev libsamplerate-dev libspeex-dev \
         libtheora-dev libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev m4 make nasm ninja-build patch pkg-config \
         python3 python-is-python3 tar zlib1g-dev libmp3lame-dev libnuma-dev libopus-dev libspeex-dev libvpx-dev libva-dev libdrm-dev libxml2-dev \
-        libjansson-dev git debhelper-compat yasm coreutils distcc ccache wget libmfx-dev clang curl libssl-dev \
+        libjansson-dev git debhelper-compat yasm coreutils distcc ccache wget libmfx-dev clang curl libssl-dev libcurl4-openssl-dev \
         ca-certificates \
     && apt-get -y -t bullseye-backports install meson \
     && rm -rf /var/lib/apt/lists/* \
