@@ -1,17 +1,17 @@
 Codename: trixie
-Date: Mon, 09 Mar 2026 22:30:43 UTC
+Date: Mon, 23 Mar 2026 17:01:36 UTC
 Architectures: amd64
 Components: main
 Description: smeinecke/handbrake-deb
 MD5Sum:
- cfa0b1e88fc419e433955103cf6ea3a6 3016 main/binary-amd64/Packages
- 43e0d0a3f3accddef14208ff7ff8d5eb 1103 main/binary-amd64/Packages.gz
+ c678dea8e37a4141714597154be795e5 3016 main/binary-amd64/Packages
+ b5a0d6512e3545e37848b7b1cd419604 1098 main/binary-amd64/Packages.gz
  bc4a684e2508824daad740ab66c5eaa6 73 main/binary-amd64/Release
 SHA1:
- e882846630922a490f6b62e63c7cac440b970911 3016 main/binary-amd64/Packages
- 2a31953c1e03b44882f0962987452ac135335066 1103 main/binary-amd64/Packages.gz
+ f3e634b7f33a99fe23a5db38db81f78ce925aef2 3016 main/binary-amd64/Packages
+ 052a335906c41a81e14311eb6c32b1e5e6fb619e 1098 main/binary-amd64/Packages.gz
  1be3de87c95a26028939c8d762f1f0d9ec5e89ad 73 main/binary-amd64/Release
 SHA256:
- ffd5bf77188d1d4e471a44652b52ad5172fc7d404175e0b66b0eb67a07cfef3b 3016 main/binary-amd64/Packages
- a5a9c7798b2e323f0903cd2add04ba87205b76236751374edbf15ac136758db3 1103 main/binary-amd64/Packages.gz
+ 660a044196f0b520aed662fdea97abcac3b08e5f208650dfdbb06f4a63268756 3016 main/binary-amd64/Packages
+ 5ff3d6db26a603308744bc5bef7c45605b49c526f2c636eff0ca0d61d8a91889 1098 main/binary-amd64/Packages.gz
  81ef8ceddcd65bc1bbac170b9744ec721f77748866000f31b74fcffa9de4b0f6 73 main/binary-amd64/Release

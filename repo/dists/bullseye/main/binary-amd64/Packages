@@ -1,5 +1,5 @@
 Package: handbrake
-Version: 1.11.0~bullseye
+Version: 1.11.1~bullseye
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
 Installed-Size: 74
@@ -7,11 +7,11 @@ Recommends: gstreamer1.0-libav, gstreamer1.0-pulseaudio | gstreamer1.0-alsa, gst
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake_1.11.0~bullseye_amd64.deb
-Size: 52540
-SHA256: 4ab9d872b3fd71c520cbfd2b7ab59cdb402c951150f38f2da9b654092d0c231e
-SHA1: e4f9304e4fc06efabac30234176f12a5672cab59
-MD5sum: 9aa48be7900495dd5d9c4af2cad491b5
+Filename: pool/main/h/handbrake/handbrake_1.11.1~bullseye_amd64.deb
+Size: 52672
+SHA256: 1a6fcd14957c923849b712d786d4b509d68048dd26d38db9d6b4bea469af1077
+SHA1: fc31f8492f72644b660eec4f9ea9a705082cdf1a
+MD5sum: 25ced0c8a01da9cd05e0a79bb4145434
 Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media. It's particularly useful
@@ -22,7 +22,7 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
 
 Package: handbrake-cli
 Source: handbrake
-Version: 1.11.0~bullseye
+Version: 1.11.1~bullseye
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
 Installed-Size: 284282
@@ -30,11 +30,11 @@ Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.30), libdrm2 (>= 2.4.66)
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake-cli_1.11.0~bullseye_amd64.deb
-Size: 53633560
-SHA256: 3ceca30210cced699b41d953eddf9a6f1e433e509e55ea9f7f6dc5dce6d89276
-SHA1: c3ce3fd5f855ddcd46e0efc1b3f91052814ad6a1
-MD5sum: 451e87d51a7897e4719e576043d3882b
+Filename: pool/main/h/handbrake/handbrake-cli_1.11.1~bullseye_amd64.deb
+Size: 53634508
+SHA256: 4b8b365c4a217de3f33e7227b9cb689bc545840f553f203ead32f315d35c8254
+SHA1: e596636a26d5900d17f4905601694c1b1fbfd022
+MD5sum: 3133718e954a6e0f046015fb2ffbad13
 Description: versatile DVD ripper and video transcoder (command line)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media.  It's particularly useful
