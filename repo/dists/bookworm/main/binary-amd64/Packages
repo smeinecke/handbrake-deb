@@ -1,18 +1,18 @@
 Package: handbrake
-Version: 1.11.1~bookworm
+Version: 1.11.2~bookworm
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
-Installed-Size: 220541
+Installed-Size: 221023
 Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.35), libdrm2 (>= 2.4.66), libgcc-s1 (>= 4.2), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.71.1), libgtk-4-1 (>= 4.6.0), libjansson4 (>= 2.14), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libpango-1.0-0 (>= 1.37.5), libspeex1 (>= 1.2~), libstdc++6 (>= 11), libtheora0 (>= 1.0), libturbojpeg0 (>= 1:1.4.0), libva-drm2 (>= 1.1.0), libva2 (>= 2.1.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx7 (>= 1.12.0), libx264-164 (>= 2:0.164.3095+gitbaee400), libxml2 (>= 2.9.1), zlib1g (>= 1:1.1.4)
 Recommends: gstreamer1.0-libav, gstreamer1.0-pulseaudio | gstreamer1.0-alsa, gstreamer1.0-x
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake_1.11.1~bookworm_amd64.deb
-Size: 55014296
-SHA256: 15c65ec5fc7adac466d8af24f3275a864eb9ef87bae4ce1d24d8b0222c7ea45f
-SHA1: 4f36b855a9a0cadec322dd09f51f4eb8f2617144
-MD5sum: aeeec9fea53af4428f7e38552351f649
+Filename: pool/main/h/handbrake/handbrake_1.11.2~bookworm_amd64.deb
+Size: 55000124
+SHA256: 39ef34b5f6ae03f14c2a3035b47c3f07c619eeea71133b84cc599939afe251d3
+SHA1: 6cc3e92b1079676f67c7cfbc5e8a9e338ebc4ba6
+MD5sum: 2c7ebaa219c73c6dbd4baf7303a4355b
 Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media. It's particularly useful
@@ -23,19 +23,19 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
 
 Package: handbrake-cli
 Source: handbrake
-Version: 1.11.1~bookworm
+Version: 1.11.2~bookworm
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
-Installed-Size: 215267
+Installed-Size: 215745
 Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.35), libdrm2 (>= 2.4.66), libgcc-s1 (>= 4.2), libjansson4 (>= 2.14), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libspeex1 (>= 1.2~), libstdc++6 (>= 11), libtheora0 (>= 1.0), libturbojpeg0 (>= 1:1.4.0), libva-drm2 (>= 1.1.0), libva2 (>= 2.1.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx7 (>= 1.12.0), libx264-164 (>= 2:0.164.3095+gitbaee400), zlib1g (>= 1:1.1.4)
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake-cli_1.11.1~bookworm_amd64.deb
-Size: 53130112
-SHA256: 32e46a88ba77b27317674cc71de68e8e425f262dcb2cd5b502cc86f1044ea86b
-SHA1: 84b0898c59f0fa8cfd432a5c65c8de1fe1efe73c
-MD5sum: bce1aa1f590b05045a9d7c203296f767
+Filename: pool/main/h/handbrake/handbrake-cli_1.11.2~bookworm_amd64.deb
+Size: 53167720
+SHA256: 592d1caef7d0a07d9e31181619bde95b8317e2221cef63075c74caeb2a886673
+SHA1: 02c4f6733a21510b3e585f9c41e2a75bae33efad
+MD5sum: 58aedd6ca4ef612e30ea8e122f3786c0
 Description: versatile DVD ripper and video transcoder (command line)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media.  It's particularly useful

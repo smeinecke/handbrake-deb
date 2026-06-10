@@ -1,5 +1,5 @@
 Package: handbrake
-Version: 1.11.1~bullseye
+Version: 1.11.2~bullseye
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
 Installed-Size: 74
@@ -7,11 +7,11 @@ Recommends: gstreamer1.0-libav, gstreamer1.0-pulseaudio | gstreamer1.0-alsa, gst
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake_1.11.1~bullseye_amd64.deb
-Size: 52672
-SHA256: 1a6fcd14957c923849b712d786d4b509d68048dd26d38db9d6b4bea469af1077
-SHA1: fc31f8492f72644b660eec4f9ea9a705082cdf1a
-MD5sum: 25ced0c8a01da9cd05e0a79bb4145434
+Filename: pool/main/h/handbrake/handbrake_1.11.2~bullseye_amd64.deb
+Size: 52864
+SHA256: c7631659d8b54028caeb6bd61659cb7356f29d40535bf1adfc9445bde8780f29
+SHA1: 51a842a55b8b36a3ce0949419c6c5b9f02bf7f8b
+MD5sum: 9f2875376d0a3f2c8c2c06aa37ce3d91
 Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media. It's particularly useful
@@ -22,19 +22,19 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
 
 Package: handbrake-cli
 Source: handbrake
-Version: 1.11.1~bullseye
+Version: 1.11.2~bullseye
 Architecture: amd64
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
-Installed-Size: 284282
+Installed-Size: 284967
 Depends: libass9 (>= 1:0.13.6), libbz2-1.0, libc6 (>= 2.30), libdrm2 (>= 2.4.66), libgcc-s1 (>= 4.2), libjansson4 (>= 2.0.1), liblzma5 (>= 5.1.1alpha+20120614), libmp3lame0 (>= 3.100), libnuma1 (>= 2.0.11), libopus0 (>= 1.1), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 5.2), libtheora0 (>= 1.0), libturbojpeg0 (>= 1:1.4.0), libva-drm2 (>= 1.1.0), libva2 (>= 2.1.0), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libvpx6 (>= 1.6.0), libx264-160 (>= 2:0.160.3011+gitcde9a93), zlib1g (>= 1:1.1.4)
 Homepage: https://handbrake.fr/
 Priority: optional
 Section: graphics
-Filename: pool/main/h/handbrake/handbrake-cli_1.11.1~bullseye_amd64.deb
-Size: 53634508
-SHA256: 4b8b365c4a217de3f33e7227b9cb689bc545840f553f203ead32f315d35c8254
-SHA1: e596636a26d5900d17f4905601694c1b1fbfd022
-MD5sum: 3133718e954a6e0f046015fb2ffbad13
+Filename: pool/main/h/handbrake/handbrake-cli_1.11.2~bullseye_amd64.deb
+Size: 53725648
+SHA256: 79e4f054a1afeed705036e77a705c3f4eb397afeb4f9297b3daeaba9beacd944
+SHA1: 0abe025c15fb91b6d77cfee64f953c6f47b583b8
+MD5sum: dc7f20a5fa48377bb26a842dedb61fa9
 Description: versatile DVD ripper and video transcoder (command line)
  HandBrake is a versatile, easy-to-use tool for converting DVDs and other
  videos into H.264, XViD, or Ogg formatted media.  It's particularly useful
