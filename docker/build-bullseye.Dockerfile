@@ -21,6 +21,22 @@ RUN set -e \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
+# HandBrake 1.11.2+ requires autoconf 2.71; bullseye only has 2.69
+RUN set -e \
+    && apt-get update \
+    && apt-get -y install wget ca-certificates \
+    && cd /tmp \
+    && wget https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz \
+    && tar -xzf autoconf-2.71.tar.gz \
+    && cd autoconf-2.71 \
+    && ./configure --prefix=/usr \
+    && make -j$(nproc) \
+    && make install \
+    && cd / \
+    && rm -rf /tmp/autoconf-2.71* \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /tmp/* /var/tmp/* /var/log/*
+
 # gtk stuff removed (gtk4 not supported in bullseye)
 
 # Get Rust
