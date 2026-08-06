@@ -29,28 +29,32 @@ jobs:
         uses: actions/checkout@v6
       - name: Download release trixie
         run: >
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}~trixie_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}~trixie_amd64.deb
       - name: Download release focal
         run: >
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}~focal_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}~focal_amd64.deb
       - name: Download release jammy
         run: >
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}~jammy_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}~jammy_amd64.deb
       - name: Download release noble
         run: >
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.noble_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.noble_amd64.deb
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}~noble_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}~noble_amd64.deb
+      - name: Download release resolute
+        run: >
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}~resolute_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}~resolute_amd64.deb
       - name: Download release bullseye
         run: >
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}~bullseye_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}~bullseye_amd64.deb
       - name: Download release bookworm
         run: >
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb && \
-          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake_${{ github.event.inputs.hb_tag }}~bookworm_amd64.deb && \
+          wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ github.event.inputs.hb_tag }}/handbrake-cli_${{ github.event.inputs.hb_tag }}~bookworm_amd64.deb
       - name: Github pages APT repo (focal)
         uses: smeinecke/apt-repo-action@v2.1.8
         with:
@@ -63,9 +67,10 @@ jobs:
             focal
             jammy
             noble
+            resolute
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.focal_amd64.deb"
+            "handbrake_${{ github.event.inputs.hb_tag }}~focal_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}~focal_amd64.deb"
           file_target_version: focal
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -82,9 +87,10 @@ jobs:
             focal
             jammy
             noble
+            resolute
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.jammy_amd64.deb"
+            "handbrake_${{ github.event.inputs.hb_tag }}~jammy_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}~jammy_amd64.deb"
           file_target_version: jammy
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -101,10 +107,31 @@ jobs:
             focal
             jammy
             noble
+            resolute
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.noble_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.noble_amd64.deb"
+            "handbrake_${{ github.event.inputs.hb_tag }}~noble_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}~noble_amd64.deb"
           file_target_version: noble
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          key_passphrase: ""
+          debug: 1
+      - name: Github pages APT repo (resolute)
+        uses: smeinecke/apt-repo-action@v2.1.8
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          repo_supported_arch: amd64
+          repo_supported_version: |
+            trixie
+            bookworm
+            bullseye
+            focal
+            jammy
+            noble
+            resolute
+          file: |
+            "handbrake_${{ github.event.inputs.hb_tag }}~resolute_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}~resolute_amd64.deb"
+          file_target_version: resolute
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
           debug: 1
@@ -120,9 +147,10 @@ jobs:
             focal
             jammy
             noble
+            resolute
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.bullseye_amd64.deb"
+            "handbrake_${{ github.event.inputs.hb_tag }}~bullseye_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}~bullseye_amd64.deb"
           file_target_version: bullseye
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -139,9 +167,10 @@ jobs:
             focal
             jammy
             noble
+            resolute
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.bookworm_amd64.deb"
+            "handbrake_${{ github.event.inputs.hb_tag }}~bookworm_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}~bookworm_amd64.deb"
           file_target_version: bookworm
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
@@ -158,9 +187,10 @@ jobs:
             focal
             jammy
             noble
+            resolute
           file: |
-            "handbrake_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb"
-            "handbrake-cli_${{ github.event.inputs.hb_tag }}.trixie_amd64.deb"
+            "handbrake_${{ github.event.inputs.hb_tag }}~trixie_amd64.deb"
+            "handbrake-cli_${{ github.event.inputs.hb_tag }}~trixie_amd64.deb"
           file_target_version: trixie
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""

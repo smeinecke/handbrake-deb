@@ -34,3 +34,9 @@ services:
     build:
       context: ./docker
       dockerfile: build-noble.Dockerfile
+
+  resolute:
+    image: handbrake-custom-build:resolute-local
+    build:
+      context: ./docker
+      dockerfile: build-resolute.Dockerfile

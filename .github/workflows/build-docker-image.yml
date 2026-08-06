@@ -12,6 +12,7 @@ on:
           - 'focal'
           - 'jammy'
           - 'noble'
+          - 'resolute'
           - 'bullseye'
           - 'bookworm'
         required: true
