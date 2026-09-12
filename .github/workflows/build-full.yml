@@ -5,7 +5,7 @@ on:
     inputs:
       hb_tag:
         description: 'Version Tag'
-        default: '1.10.2'
+        default: '1.11.2'
         required: true
   push:
     tags:
@@ -14,9 +14,6 @@ on:
 permissions:
   contents: write
   packages: read
-
-env:
-  HB_TAG: ${{ github.event.inputs.hb_tag }}
 
 jobs:
   build:
@@ -35,35 +32,45 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
-      - name: Set env
-        if: startsWith(github.ref, 'refs/tags/')
-        run: echo "HB_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Set env
-        if: github.event.inputs.hb_tag != ''
-        run: echo "HB_TAG=${{ github.event.inputs.hb_tag }}" >> $GITHUB_ENV
+      - name: Set HandBrake tag
+        id: vars
+        run: |
+          if [ -n "${{ github.event.inputs.hb_tag }}" ]; then
+            tag="${{ github.event.inputs.hb_tag }}"
+          else
+            tag="${GITHUB_REF#refs/*/}"
+          fi
+          tag="${tag#v}"
+          tag="${tag#V}"
+          tag="${tag#Release/}"
+          tag="${tag#release/}"
+          echo "hb_tag=${tag}" >> "$GITHUB_OUTPUT"
+          echo "HB_TAG=${tag}" >> "$GITHUB_ENV"
+          echo "Normalized HandBrake tag: ${tag}"
       - name: Cache build
         uses: actions/cache@v6
         with:
           path: |
             cache
-          key: "${{ matrix.os-version }}-build-cache-${{ env.HB_TAG }}"
+          key: "${{ matrix.os-version }}-build-cache-${{ steps.vars.outputs.hb_tag }}"
           restore-keys: |
             "${{ matrix.os-version }}-build-cache-"
       - name: Run build script
         run: ./scripts/build.sh
         env:
           DEB_FLAVOR: "${{ matrix.os-version }}"
+          HB_TAG: "${{ steps.vars.outputs.hb_tag }}"
       - name: Cache build
         uses: actions/cache/save@v6
         if: always()
         with:
           path: |
             cache
-          key: "${{ matrix.os-version }}-build-cache-${{ env.HB_TAG }}"
+          key: "${{ matrix.os-version }}-build-cache-${{ steps.vars.outputs.hb_tag }}"
       - name: Upload deb files
         uses: actions/upload-artifact@v7
         with:
-          name: "packages-${{ env.HB_TAG }}-${{ matrix.os-version }}"
+          name: "packages-${{ steps.vars.outputs.hb_tag }}-${{ matrix.os-version }}"
           path: ./*.deb
 
   merge-artefacts:

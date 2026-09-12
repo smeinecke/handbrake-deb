@@ -19,7 +19,7 @@ on:
         required: true
       hb_tag:
         description: 'HandBrake Version Tag'
-        default: '1.10.2'
+        default: '1.11.2'
         required: true
       release:
         type: boolean
@@ -42,26 +42,36 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
+      - name: Normalize HandBrake tag
+        id: vars
+        run: |
+          tag="${{ github.event.inputs.hb_tag }}"
+          tag="${tag#v}"
+          tag="${tag#V}"
+          tag="${tag#Release/}"
+          tag="${tag#release/}"
+          echo "hb_tag=${tag}" >> "$GITHUB_OUTPUT"
+          echo "Normalized HandBrake tag: ${tag}"
       - name: Cache build
         uses: actions/cache@v6
         with:
           path: |
             cache
-          key: "${{ github.event.inputs.flavor }}-build-cache-${{ github.event.inputs.hb_tag }}"
+          key: "${{ github.event.inputs.flavor }}-build-cache-${{ steps.vars.outputs.hb_tag }}"
           restore-keys: |
             "${{ github.event.inputs.flavor }}-build-cache-"
       - name: Run build script
         run: ./scripts/build.sh
         env:
           DEB_FLAVOR: "${{ github.event.inputs.flavor }}"
-          HB_TAG: "${{ github.event.inputs.hb_tag }}"
+          HB_TAG: "${{ steps.vars.outputs.hb_tag }}"
       - name: Cache build
         uses: actions/cache/save@v6
         if: always()
         with:
           path: |
             cache
-          key: "${{ github.event.inputs.flavor }}-build-cache-${{ github.event.inputs.hb_tag }}"
+          key: "${{ github.event.inputs.flavor }}-build-cache-${{ steps.vars.outputs.hb_tag }}"
       - name: Upload deb files
         uses: actions/upload-artifact@v7
         with:
@@ -87,8 +97,8 @@ jobs:
             noble
             resolute
           file: |
-            handbrake_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
-            handbrake-cli_${{ github.event.inputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
+            handbrake_${{ steps.vars.outputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
+            handbrake-cli_${{ steps.vars.outputs.hb_tag }}~${{ github.event.inputs.flavor }}_amd64.deb
           file_target_version: ${{ github.event.inputs.flavor }}
           private_key: ${{ secrets.APT_SIGNING_KEY }}
           key_passphrase: ""
