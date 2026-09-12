@@ -8,8 +8,8 @@ ADD assets/apt_mindeps /etc/apt/apt.conf.d/90_mindeps
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Bullseye is EOL; use the snapshot mirrors embedded in the official Docker
-# image (or a fixed fallback) and disable the expired Valid-Until check so
-# builds keep working after the release leaves the live mirrors.
+# image if available and disable the expired Valid-Until check so builds keep
+# working after the release leaves the live mirrors.
 RUN set -e \
     && mkdir -p /etc/apt/apt.conf.d \
     && printf 'Acquire::Check-Valid-Until "false";\nAcquire::Retries "3";\n' > /etc/apt/apt.conf.d/90snapshot \
@@ -17,11 +17,10 @@ RUN set -e \
          sed -i 's/^# deb http:\/\/snapshot.debian.org/deb http:\/\/snapshot.debian.org/' /etc/apt/sources.list \
          && sed -i '/^deb http:\/\/deb.debian.org/d' /etc/apt/sources.list; \
        else \
-         cat > /etc/apt/sources.list <<'EOF'
-deb http://snapshot.debian.org/archive/debian/20260824T000000Z bullseye main
-deb http://snapshot.debian.org/archive/debian-security/20260824T000000Z bullseye-security main
-deb http://snapshot.debian.org/archive/debian/20260824T000000Z bullseye-updates main
-EOF
+         printf '%s\n' \
+           'deb http://snapshot.debian.org/archive/debian/20260824T000000Z bullseye main' \
+           'deb http://snapshot.debian.org/archive/debian-security/20260824T000000Z bullseye-security main' \
+           'deb http://snapshot.debian.org/archive/debian/20260824T000000Z bullseye-updates main' > /etc/apt/sources.list; \
        fi \
     && echo 'deb [check-valid-until=no] http://archive.debian.org/debian bullseye-backports main' > /etc/apt/sources.list.d/bullseye-backports.list \
     && apt-get update \
@@ -36,7 +35,7 @@ EOF
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
 # HandBrake 1.11.2+ requires autoconf 2.71; bullseye only has 2.69.
-# Install the bookworm package directly from a Debian snapshot.
+# Install the package directly from a Debian snapshot.
 RUN set -e \
     && apt-get update \
     && apt-get -y install wget ca-certificates \
