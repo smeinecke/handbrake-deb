@@ -7,11 +7,25 @@ ADD assets/apt_mindeps /etc/apt/apt.conf.d/90_mindeps
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# default dependencies
+# Bullseye is EOL; use the snapshot mirrors embedded in the official Docker
+# image (or a fixed fallback) and disable the expired Valid-Until check so
+# builds keep working after the release leaves the live mirrors.
 RUN set -e \
+    && mkdir -p /etc/apt/apt.conf.d \
+    && printf 'Acquire::Check-Valid-Until "false";\nAcquire::Retries "3";\n' > /etc/apt/apt.conf.d/90snapshot \
+    && if grep -q '^# deb http://snapshot.debian.org' /etc/apt/sources.list; then \
+         sed -i 's/^# deb http:\/\/snapshot.debian.org/deb http:\/\/snapshot.debian.org/' /etc/apt/sources.list \
+         && sed -i '/^deb http:\/\/deb.debian.org/d' /etc/apt/sources.list; \
+       else \
+         cat > /etc/apt/sources.list <<'EOF'
+deb http://snapshot.debian.org/archive/debian/20260824T000000Z bullseye main
+deb http://snapshot.debian.org/archive/debian-security/20260824T000000Z bullseye-security main
+deb http://snapshot.debian.org/archive/debian/20260824T000000Z bullseye-updates main
+EOF
+       fi \
     && echo 'deb [check-valid-until=no] http://archive.debian.org/debian bullseye-backports main' > /etc/apt/sources.list.d/bullseye-backports.list \
     && apt-get update \
-    && apt-get -y install appstream autoconf automake autopoint build-essential cmake git libass-dev libbz2-dev libfontconfig1-dev libfreetype6-dev \
+    && apt-get -y install appstream automake autopoint build-essential cmake git libass-dev libbz2-dev libfontconfig1-dev libfreetype6-dev \
         libfribidi-dev libharfbuzz-dev libjansson-dev liblzma-dev libmp3lame-dev libnuma-dev libogg-dev libopus-dev libsamplerate-dev libspeex-dev \
         libtheora-dev libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev m4 make nasm ninja-build patch pkg-config \
         python3 python-is-python3 tar zlib1g-dev libmp3lame-dev libnuma-dev libopus-dev libspeex-dev libvpx-dev libva-dev libdrm-dev libxml2-dev \
@@ -21,19 +35,15 @@ RUN set -e \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
-# HandBrake 1.11.2+ requires autoconf 2.71; bullseye only has 2.69
+# HandBrake 1.11.2+ requires autoconf 2.71; bullseye only has 2.69.
+# Install the bookworm package directly from a Debian snapshot.
 RUN set -e \
     && apt-get update \
     && apt-get -y install wget ca-certificates \
     && cd /tmp \
-    && wget https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz \
-    && tar -xzf autoconf-2.71.tar.gz \
-    && cd autoconf-2.71 \
-    && ./configure --prefix=/usr \
-    && make -j$(nproc) \
-    && make install \
-    && cd / \
-    && rm -rf /tmp/autoconf-2.71* \
+    && wget http://snapshot.debian.org/archive/debian/20230114T205500Z/pool/main/a/autoconf/autoconf_2.71-3_all.deb \
+    && apt-get install -y ./autoconf_2.71-3_all.deb \
+    && rm -f autoconf_2.71-3_all.deb \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* /var/log/*
 
