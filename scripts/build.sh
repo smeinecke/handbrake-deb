@@ -2,10 +2,21 @@
 set -e
 set -x
 
+# Normalize a tag-ish string: strip leading 'v', 'V', or 'Release/'.
+# HandBrake tags look like "1.10.2", but users may type "v1.10.2" or
+# "Release/1.10.2". Debian versions must not have a leading "v".
+normalize_tag() {
+    printf '%s' "$1" | sed -e 's/^[Rr][Ee][Ll][Ee][Aa][Ss][Ee]\///' \
+                           -e 's/^v//' \
+                           -e 's/^V//'
+}
+
 if [[ -z "${HB_TAG}" ]]; then
     echo "Parameter HB_TAG missing!"
     exit 1;
 fi
+
+HB_TAG=$(normalize_tag "${HB_TAG}")
 
 if [[ -z "${DEB_FLAVOR}" ]]; then
     echo "Parameter DEB_FLAVOR missing!"
@@ -40,18 +51,18 @@ fi
 cd HandBrake
 
 echo "Checkout from tag: ${HB_TAG}"
-git checkout "${HB_TAG}"
-COMMIT_HASH=$(git log -n 1 --pretty=format:'%h' --abbrev=8)
+git checkout "refs/tags/${HB_TAG}" || git checkout "${HB_TAG}"
 
 if [ -d /deps ]; then
   mv /deps/* .
-  export PATH=$PWD/cmake-3.16.3-Linux-x86_64/bin:$PATH
+  export PATH="${PWD}/cmake-3.16.3-Linux-x86_64/bin:${PATH}"
 fi
 
 # Display tools version
 cmake --version | head -n 1
 chmod  +x configure
 
+# shellcheck disable=SC1091
 source "/root/.cargo/env"
 
 # configure default stable.
@@ -87,8 +98,8 @@ export PATH="${RUST_TOOLCHAIN_BIN_DIR}:${PATH}"
 # fi
 
 # create original source tar file - just for dpkg-buildpackage compatibility
-git archive master | bzip2 > ../handbrake_${HB_TAG}.orig.tar.bz2
-cp -vr ${SCRIPTDIR}/${DEB_FLAVOR} debian
+git archive "HEAD" | bzip2 > "../handbrake_${HB_TAG}.orig.tar.bz2"
+cp -vr "${SCRIPTDIR}/${DEB_FLAVOR}" debian
 (
   echo "handbrake (${HB_TAG}~${DEB_FLAVOR}) unstable; urgency=high"
   echo ""
@@ -99,6 +110,6 @@ cp -vr ${SCRIPTDIR}/${DEB_FLAVOR} debian
 ) > debian/changelog
 
 
-DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -j$(nproc) -d -us -b -rfakeroot
+DEB_BUILD_OPTIONS="noautodbgsym nostrip nocheck nodocs" dpkg-buildpackage -j"$(nproc)" -d -us -b -rfakeroot
 cd ..
-rm -vf *dbgsym*.deb
+rm -vf ./*dbgsym*.deb
