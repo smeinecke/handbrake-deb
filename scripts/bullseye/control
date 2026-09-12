@@ -37,6 +37,7 @@ Build-Depends:
 Rules-Requires-Root: no
 
 Package: handbrake
+Priority: optional
 Architecture: any
 Depends:
  ${misc:Depends},
@@ -54,6 +55,7 @@ Description: versatile DVD ripper and video transcoder (GTK+ GUI)
  This package contains the graphical variant, ghb.
 
 Package: handbrake-cli
+Priority: optional
 Architecture: any
 Depends:
  ${misc:Depends},
