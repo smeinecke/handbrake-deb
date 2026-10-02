@@ -66,7 +66,7 @@ jobs:
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ steps.vars.outputs.hb_tag }}/handbrake_${{ steps.vars.outputs.hb_tag }}~bookworm_amd64.deb && \
           wget https://github.com/smeinecke/handbrake-deb/releases/download/${{ steps.vars.outputs.hb_tag }}/handbrake-cli_${{ steps.vars.outputs.hb_tag }}~bookworm_amd64.deb
       - name: Github pages APT repo (focal)
-        uses: smeinecke/apt-repo-action@v2.2.0
+        uses: smeinecke/apt-repo-action@v2.2.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -86,7 +86,7 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo (jammy)
-        uses: smeinecke/apt-repo-action@v2.2.0
+        uses: smeinecke/apt-repo-action@v2.2.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -106,7 +106,7 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo (noble)
-        uses: smeinecke/apt-repo-action@v2.2.0
+        uses: smeinecke/apt-repo-action@v2.2.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -126,7 +126,7 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo (resolute)
-        uses: smeinecke/apt-repo-action@v2.2.0
+        uses: smeinecke/apt-repo-action@v2.2.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -146,7 +146,7 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo (bullseye)
-        uses: smeinecke/apt-repo-action@v2.2.0
+        uses: smeinecke/apt-repo-action@v2.2.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -166,7 +166,7 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo (bookworm)
-        uses: smeinecke/apt-repo-action@v2.2.0
+        uses: smeinecke/apt-repo-action@v2.2.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
@@ -186,7 +186,7 @@ jobs:
           key_passphrase: ""
           debug: 1
       - name: Github pages APT repo (trixie)
-        uses: smeinecke/apt-repo-action@v2.2.0
+        uses: smeinecke/apt-repo-action@v2.2.1
         with:
           github_token: ${{ secrets.GH_PAT }}
           repo_supported_arch: amd64
